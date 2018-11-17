@@ -1,0 +1,106 @@
+/*  ==================================================
+    Resets:
+    ================================================== */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    /* using `em` instead of `rem` in body b/c bug in chrome (use `rem` in all other areas) */
+    font-size:    1.5em;
+    font-family: 'OpenSans', Helvetica, Arial, sans-serif;
+    color: #222;
+
+    padding: 30px 0;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.page-controls {
+    margin-bottom: 25px;
+}
+
+.page-controls, #div-example-2, #div-example-1 {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.btn {
+    padding: 6px 10px;
+    background: white;
+    color: #222;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgb(250, 250, 250);
+}
+
+/*  ==================================================
+    examples:
+    ================================================== */
+
+/* center this modal: */
+.modal {
+    background: #f2f2f2;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+    padding: 6px 12px;
+    text-align: center;
+    height: 100px;
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+    position: fixed;
+}
+
+/* v-center the row items: */
+#div-example-1 {
+    border: 1px solid rgba(102, 51, 153, 0.42);
+    border-radius: 2px;
+    padding: 12px 6px;
+}
+
+#div-example-1 div {
+    padding: 10px;
+    max-width: 300px;
+}
+
+#div-example-1 .empty-box {
+    background: #ffe732;
+    border: 1px solid #242424;
+    border-radius: 3px;
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+}
+
+/* make first 3 rows of buttons red: */
+#div-example-2 .row {
+    margin-bottom: 25px;
+}
+
+/* fit image in row: */
+#div-example-4 {
+    border: 1px dashed darkred;
+}
+
+.image {
+    box-sizing: border-box;
+}

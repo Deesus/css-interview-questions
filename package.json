@@ -1,0 +1,15 @@
+{
+  "name": "css-interview-questions",
+  "version": "1.0.0",
+  "description": "CSS interview questions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dee Reddy (Ди Редди)",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}
