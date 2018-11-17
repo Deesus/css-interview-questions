@@ -1,7 +1,7 @@
 <template>
 
     <!--    ==================================================
-            (4) - Fit both the images on a single row with a 40px margin between them
+                - Fit both the images on a single row with a 40px margin between them
                 - Ensure their make equal widths
                 - The images should take up the entire width of the screen (minus the 40px gap between them)
                 - (Hint: you might need 2 selectors and some math.)

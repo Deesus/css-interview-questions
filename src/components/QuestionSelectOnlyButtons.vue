@@ -1,6 +1,6 @@
 <template>
     <!--    ==================================================
-            (2) - Change all of the buttons (and only the buttons) to red.
+                - Change all of the buttons (and only the buttons) to red.
                 - (Optional) Change all of the buttons only in the first 3 rows to red.
             ================================================== -->
     <div id="div-example-2">

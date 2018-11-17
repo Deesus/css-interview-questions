@@ -1,6 +1,6 @@
 <template>
     <!--    ==================================================
-            (1) - Vertically center all the items inside the row:
+            Vertically center all the items inside the row:
             ================================================== -->
     <div id="div-example-1">
         <label><input type="text" placeholder="meow"></label>

@@ -1,8 +1,12 @@
 <template>
     <div class="side-nav">
-        <div class="side-nav__item" v-for="(question, index) in questionList" :key="index">
-            <router-link :to="{name: question.routeName }">{{ question.title }}</router-link>
+
+        <div v-for="(question, index) in questionList" :key="index">
+            <router-link :to="{name: question.routeName }">
+                <div class="side-nav__item" > {{ question.title }}</div>
+            </router-link>
         </div>
+
     </div>
 </template>
 
