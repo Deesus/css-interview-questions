@@ -2,13 +2,14 @@
 // TODO: clean up imports - do we even need some of these (e.g. index.html import)?
 import 'babel-runtime/regenerator';
 import 'webpack-hot-middleware/client?reload=true';         // creates websocket connection (and reloading on change)
-// import './styles/normalize.css';
+import './styles/normalize.css';
 import './styles/styles.css';
 // import '../user_solution.css';
 import '../index.html';
 
 import Vue from 'vue';
 import App from './App.vue';
+import store from './store/store.app';
 import VueRouter from 'vue-router';
 Vue.use (VueRouter);
 
@@ -31,6 +32,8 @@ window.onload = function() {
         data: {
 
         },
+
+        store: store,
 
         render(h) {
             return h(App);
