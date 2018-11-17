@@ -1,14 +1,19 @@
+import QuestionVCenterItems from '../components/QuestionVCenterItems.vue';
+import QuestionSelectOnlyButtons from '../components/QuestionSelectOnlyButtons.vue';
+
 export default [
     {
+        routeName: "v-align-elements",
         title: "Vertically Align All Elements in a Row",
-        shortTitle: "V-Align Elements in a Row",
         description: "Currently, the element on the container are stacked on top of each other correct " +
             "this by placing them in a single row and vertically aligning them.",
+        component: QuestionVCenterItems
     },
 
     {
+        routeName: "color-only-buttons",
         title: "Color Only the Buttons",
-        shortTitle: "Color Only the Buttons",
-        description: "Select the buttons and set them to 'red,' but don't change the color of the other elements."
+        description: "Select the buttons and set them to 'red,' but don't change the color of the other elements.",
+        component: QuestionSelectOnlyButtons
     }
 ];

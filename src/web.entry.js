@@ -4,6 +4,7 @@ import 'babel-runtime/regenerator';
 import 'webpack-hot-middleware/client?reload=true';         // creates websocket connection (and reloading on change)
 import './styles/normalize.css';
 import './styles/styles.css';
+// TODO: should we import `user_solution?`
 // import '../user_solution.css';
 import '../index.html';
 
@@ -13,10 +14,10 @@ import store from './store/store.app';
 import VueRouter from 'vue-router';
 Vue.use (VueRouter);
 
-// import routes from './vueRoutes';
-// const router = new VueRouter({
-//    routes
-// });
+import routes from './utils/routes';
+const router = new VueRouter({
+   routes
+});
 
 
 // ==================================================
@@ -29,11 +30,11 @@ window.onload = function() {
     new Vue({
         el: '#app',
 
-        data: {
+        data: { },
 
-        },
+        router,
 
-        store: store,
+        store,
 
         render(h) {
             return h(App);

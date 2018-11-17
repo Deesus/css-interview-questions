@@ -6,8 +6,8 @@
                 - The images should take up the entire width of the screen (minus the 40px gap between them)
                 - (Hint: you might need 2 selectors and some math.)
             ================================================== -->
-    <div id="div-example-4" v-if="showExample4">
-        <img class="image" src="./images/marble_palace.jpg"><img class="image" src="./images/nevski_street.jpg">
+    <div id="div-example-4">
+        <img class="image" src="../images/marble_palace.jpg"><img class="image" src="../images/nevski_street.jpg">
     </div>
 </template>
 

@@ -7,7 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         questionList: questionList,
-        selectedQuestionIndex: 0
+        selectedQuestion: questionList[0]
     },
 
     mutations: {

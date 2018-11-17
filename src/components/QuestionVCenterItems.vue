@@ -2,7 +2,7 @@
     <!--    ==================================================
             (1) - Vertically center all the items inside the row:
             ================================================== -->
-    <div id="div-example-1" v-if="showExample1">
+    <div id="div-example-1">
         <label><input type="text" placeholder="meow"></label>
         <div class="lots-of-text">
             Reiciendis earum sit aut quos dolor perspiciatis eos sunt.

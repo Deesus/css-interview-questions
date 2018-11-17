@@ -1,11 +1,8 @@
 <template>
     <div class="side-nav">
-        <div class="side-nav__item" v-for="(question, index) in questionList" :key="index" @click="selectQuestion(index)"> {{ question.title }} </div>
-
-        <!--<div id="btn-example-1" class="btn" @click="showExample(1)">1</div>-->
-        <!--<div id="btn-example-2" class="btn" @click="showExample(2)">2</div>-->
-        <!--<span id="btn-example-3" class="btn" @click="showExample(3)">3</span>-->
-        <!--<span id="btn-example-4" class="btn" @click="showExample(4)">4</span>-->
+        <div class="side-nav__item" v-for="(question, index) in questionList" :key="index">
+            <router-link :to="{name: question.routeName }">{{ question.title }}</router-link>
+        </div>
     </div>
 </template>
 
@@ -14,15 +11,18 @@
     export default {
         name: 'LayoutSideNav',
 
+
         data() {
             return {  };
         },
+
 
         methods: {
             selectQuestion(index) {
                 this.$store.commit('selectQuestionByIndex', index);
             }
         },
+
 
         computed: {
             questionList() {
