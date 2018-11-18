@@ -6,13 +6,10 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        questionList: questionList,
-        selectedQuestion: questionList[0]
+        questionList: questionList
     },
 
     mutations: {
-        selectQuestionByIndex(state, payload) {
-            return state.selectedQuestionIndex = payload;
-        }
+
     }
 });

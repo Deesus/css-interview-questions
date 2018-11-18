@@ -16,7 +16,7 @@
 
         data() {
             return {
-                modalWidth: 200
+                modalWidth: 500
             };
         },
 
@@ -31,9 +31,12 @@
         },
 
         mounted() {
+
+            // dynamically generate modal width between 200px-800px every 2.6s:
             setInterval(()=> {
                 this.modalWidth = Math.floor((Math.random() * 600) + 200);
             }, 2600);
+
         }
     }
 </script>

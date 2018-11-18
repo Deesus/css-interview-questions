@@ -5,14 +5,12 @@ import Home from '../components/Home.vue';
 let allRoutes = [];
 
 // ---------- add questions' routes: ----------
-for (let i=0; i < questionList.length; i++) {
-    allRoutes.push(
-        {
-            path: `/question/${questionList[i].routeName}`,
-            name: questionList[i].routeName,
-            component: questionList[i].component
-        }
-    );
+for (let question of questionList) {
+    allRoutes.push({
+        path:       `/question/${question.routeName}`,
+        name:       question.routeName,
+        component:  question.component
+    });
 }
 
 
