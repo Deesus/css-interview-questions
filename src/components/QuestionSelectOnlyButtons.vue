@@ -3,7 +3,7 @@
                 - Change all of the buttons (and only the buttons) to red.
                 - (Optional) Change all of the buttons only in the first 3 rows to red.
             ================================================== -->
-    <div id="div-example-2">
+    <div class="main__view">
         <div class="row">
             <label><input placeholder="bye" type="text"></label>
             <label><input type="button" value="okay"></label>

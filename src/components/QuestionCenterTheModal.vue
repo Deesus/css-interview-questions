@@ -3,8 +3,10 @@
                 - Center the modal both vertically and horizontally (with respect to the screen).
                 - Note: the modal has randomly generated widths.
             ================================================== -->
-    <div class="modal" :style="dynamicModalWidth">
-        <h4>I really want to be centered!</h4>
+    <div class="main__view">
+        <div class="modal" :style="dynamicModalWidth">
+            <h4>I really want to be centered!</h4>
+        </div>
     </div>
 
 </template>

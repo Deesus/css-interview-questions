@@ -3,6 +3,7 @@
 import 'babel-runtime/regenerator';
 import 'webpack-hot-middleware/client?reload=true';         // creates websocket connection (and reloading on change)
 import './styles/normalize.css';
+import './styles/animations.css';
 import './styles/styles.css';
 // TODO: should we import `user_solution?`
 // import '../user_solution.css';
