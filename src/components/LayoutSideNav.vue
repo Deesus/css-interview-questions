@@ -3,7 +3,7 @@
 
         <div v-for="(question, index) in questionList" :key="index">
             <router-link :to="{name: question.routeName }">
-                <div class="side-nav__item" > {{ question.title }}</div>
+                <div class="side-nav__item" @click="linkClicked(index)"> {{ question.title }}</div>
             </router-link>
         </div>
 
@@ -20,13 +20,11 @@
             return {  };
         },
 
-
         methods: {
-            selectQuestion(index) {
-                this.$store.commit('selectQuestionByIndex', index);
+            linkClicked(index) {
+                this.$store.commit('setSelectedQuestionIndex', index);
             }
         },
-
 
         computed: {
             questionList() {

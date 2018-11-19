@@ -1,9 +1,5 @@
 <template>
-    <!--    ==================================================
-                - Change all of the buttons (and only the buttons) to red.
-                - (Optional) Change all of the buttons only in the first 3 rows to red.
-            ================================================== -->
-    <div class="main__view">
+    <div class="question">
         <div class="row">
             <label><input placeholder="bye" type="text"></label>
             <label><input type="button" value="okay"></label>
@@ -31,7 +27,6 @@
             <label><input type="button" value="warning"></label>
         </div>
     </div>
-
 </template>
 
 
@@ -43,9 +38,10 @@
             return {};
         },
 
-        methods: {},
-
-        computed: {}
+        mounted() {
+            let index = this.$store.state.selectedQuestionIndex;
+            let question = this.$store.state.questionList[index];
+        }
     }
 </script>
 

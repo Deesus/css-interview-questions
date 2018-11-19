@@ -8,7 +8,7 @@
     animation-fill-mode: both;
 }
 
-.main__view {
+.question {
     backface-visibility: hidden;    /* hints browser to use hardware acceleration */
     will-change: transform;
     min-height: 100vh;

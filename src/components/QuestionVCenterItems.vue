@@ -1,8 +1,5 @@
 <template>
-    <!--    ==================================================
-            Vertically center all the items inside the row:
-            ================================================== -->
-    <div class="main__view">
+    <div class="question">
         <label><input type="text" placeholder="meow"></label>
         <div class="lots-of-text">
             Reiciendis earum sit aut quos dolor perspiciatis eos sunt.
@@ -18,15 +15,7 @@
 
 <script>
     export default {
-        name: 'QuestionVCenterItems',
-
-        data() {
-            return {};
-        },
-
-        methods: {},
-
-        computed: {}
+        name: 'QuestionVCenterItems'
     }
 </script>
 

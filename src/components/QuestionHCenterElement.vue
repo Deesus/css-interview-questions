@@ -1,14 +1,13 @@
 <template>
     <div class="question">
-        Home
+        <button class="button" type="button">Horizontally Center Me</button>
     </div>
 </template>
 
 
 <script>
-    // TODO: rename `Home.vue` since it is a view within the main layout?
     export default {
-        name: 'Home',
+        name: 'QuestionHCenterElement',
 
         data() {
             return {};
@@ -22,5 +21,8 @@
 
 
 <style scoped>
-
+    /* specific to this component: */
+    .question {
+        border: 1px dashed red;
+    }
 </style>
