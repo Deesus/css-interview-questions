@@ -1,5 +1,5 @@
 import questionList from './questionList';
-import Home from '../components/Home.vue';
+import QuestionHome from '../components/QuestionHome.vue';
 
 
 let allRoutes = [];
@@ -22,7 +22,7 @@ allRoutes = [
     {
         path: '/',
         name: 'home',
-        component: Home
+        component: QuestionHome
     },
 
     // default route:

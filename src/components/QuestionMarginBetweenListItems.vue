@@ -1,18 +1,35 @@
 <template>
-    <div id="question">
-        <div class="list">
-            <div class="list-item">apple</div>
-            <div class="list-item">orange</div>
-            <div class="list-item">banana</div>
-            <div class="list-item">cherry</div>
-        </div>
-    </div>
+    <question>
+        <template slot="question-description">
+            {{ this.description }}
+        </template>
+        <template slot="question-modal">
+            <div class="list">
+                <div class="list-item">apple</div>
+                <div class="list-item">orange</div>
+                <div class="list-item">banana</div>
+                <div class="list-item">cherry</div>
+            </div>
+        </template>
+    </question>
 </template>
 
 
 <script>
+    import Question from './Question.vue';
+
     export default {
-        name: 'QuestionMarginBetweenListItems'
+        name: 'QuestionMarginBetweenListItems',
+
+        data() {
+            return {
+                description: "Add 12px margin between each list item, but not the first one."
+            };
+        },
+
+        components: {
+            Question
+        }
     }
 </script>
 

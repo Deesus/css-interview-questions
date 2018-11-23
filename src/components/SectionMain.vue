@@ -1,14 +1,7 @@
 <template>
 
     <div class="main">
-        <transition
-            mode="out-in"
-            name="slide"
-            enter-active-class="slide-in-right animated"
-            leave-active-class="slide-out-right animated"
-        >
-            <router-view></router-view>
-        </transition>
+        <slot></slot>
     </div>
 
 </template>

@@ -1,4 +1,5 @@
 <template>
+
     <div class="side-nav">
 
         <div v-for="(question, index) in questionList" :key="index">
@@ -8,6 +9,7 @@
         </div>
 
     </div>
+
 </template>
 
 

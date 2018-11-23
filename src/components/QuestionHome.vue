@@ -6,7 +6,6 @@
 
 
 <script>
-    // TODO: rename `Home.vue` since it is a view within the main layout?
     export default {
         name: 'Home',
 

@@ -1,13 +1,34 @@
 <template>
-    <div class="question">
-        <img class="image" src="../images/marble_palace.jpg"><img class="image" src="../images/nevski_street.jpg">
-    </div>
+
+    <question>
+        <template slot="question-description">
+            {{ this.description }}
+        </template>
+        <template slot="question-modal">
+            <img class="image" src="../images/marble_palace.jpg" alt="Marble Palace"><img class="image" src="../images/nevski_street.jpg" alt="Nevski Prospect">
+        </template>
+    </question>
+
 </template>
 
 
 <script>
+    import Question from './Question.vue';
+
     export default {
-        name: 'QuestionTwoImagesAndMarginInARow'
+        name: 'QuestionTwoImagesAndMarginInARow',
+
+        data() {
+            return {
+                description: "Fit both the images on a single row with a 40px margin between them. Ensure both images are of " +
+                             "equal size, and that, together, they take up the entire width of the container (minus the 40px gap between them)." +
+                             "Hint: you'll want to give the images responsive widths."
+            }
+        },
+
+        components: {
+            Question
+        }
     }
 </script>
 

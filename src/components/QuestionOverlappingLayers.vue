@@ -1,20 +1,39 @@
 <template>
-    <div class="question">
-        <div class="panel-1">I should be above</div>
-        <div class="panel-2">I should be below</div>
-    </div>
+
+    <question>
+        <template slot="question-description">
+            {{ this.description }}
+        </template>
+
+        <template slot="question-modal">
+            <div class="panel-1">I should be above</div>
+            <div class="panel-2">I should be below</div>
+        </template>
+
+    </question>
+
 </template>
 
 
 <script>
+    import Question from './Question.vue';
+
     export default {
-        name: 'QuestionOverlappingLayers'
+        name: 'QuestionOverlappingLayers',
+        data() {
+            return {
+                description: "These two panels are overlapping. Make the yellow panel display above the blue one."
+            }
+        },
+        components: {
+            Question
+        }
     }
 </script>
 
 
 <style scoped>
-    .question {
+    .question-modal {
         position: relative;
         text-align: center;
     }

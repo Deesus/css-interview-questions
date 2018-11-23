@@ -1,20 +1,30 @@
 <template>
 
-    <div class="question">
-        <div class="modal" :style="dynamicModalWidth">
-            <h4>I really want to be centered!</h4>
-        </div>
-    </div>
+    <question>
+        <template slot="question-description">
+            {{ this.description }}
+        </template>
+        <template slot="question-modal">
+            <div class="modal" :style="dynamicModalWidth">
+                <h4>I really want to be centered!</h4>
+            </div>
+        </template>
+    </question>
 
 </template>
 
 
 <script>
+    import Question from './Question.vue';
+
     export default {
         name: 'QuestionCenterTheModal',
-
+        components: {Question},
         data() {
             return {
+                description: "Center the modal both vertically and horizontally (with respect to the container). Note that the " +
+                    "width of the modal is randomly generated -- you'll have to figure out a way for the modal to be centered " +
+                    "regardless of its width",
                 modalWidth: 500     // initial modal width
             };
         },

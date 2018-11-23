@@ -1,21 +1,39 @@
 <template>
-    <div class="question">
-        <button class="button" type="button">Horizontally Center Me</button>
-    </div>
+
+    <question>
+        <template slot="question-description">
+            {{ this.description }}
+        </template>
+
+        <template slot="question-modal">
+            <div>
+                <button class="button" type="button">Horizontally Center Me</button>
+            </div>
+        </template>
+    </question>
+
 </template>
 
 
 <script>
+    import Question from './Question.vue';
+
     export default {
         name: 'QuestionHCenterElement',
 
         data() {
-            return {};
+            return {
+                description: "Horizontally center the button inside it's container"
+            };
         },
 
         methods: {},
 
-        computed: {}
+        computed: {},
+
+        components: {
+            'question': Question
+        }
     }
 </script>
 
