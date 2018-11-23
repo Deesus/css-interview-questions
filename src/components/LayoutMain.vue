@@ -1,14 +1,16 @@
 <template>
+
     <div class="main">
         <transition
             mode="out-in"
-            name="main-view-transitions"
-            enter-active-class="slideInRight animated"
-            leave-active-class="slideOutRight animated"
+            name="slide"
+            enter-active-class="slide-in-right animated"
+            leave-active-class="slide-out-right animated"
         >
             <router-view></router-view>
         </transition>
     </div>
+
 </template>
 
 

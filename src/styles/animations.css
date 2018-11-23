@@ -1,13 +1,6 @@
 /* ==================================================
     main animation classes:
    ==================================================*/
-.animated {
-    -webkit-animation-duration: 600ms;
-    animation-duration: 600ms;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
 .question {
     backface-visibility: hidden;    /* hints browser to use hardware acceleration */
     will-change: transform;
@@ -15,67 +8,61 @@
     width: 100%;
 }
 
+.animated {
+    -webkit-animation-duration: 400ms;
+    animation-duration: 400ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
 
 /* ==================================================
     slides:
    ==================================================*/
 
+.slide-out-right,
+.slide-in-right {
+    animation-timing-function: ease-in-out;
+}
+
 /* ---------- slide right: ---------- */
-@keyframes slideOutRight {
-    from {
+@keyframes slide-out-right {
+    0% {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         opacity: 1;
     }
 
-    to {
-        visibility: hidden;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-        opacity: 0;
-    }
-}
-.slideOutRight {
-    -webkit-animation-name: slideOutRight;
-    animation-name: slideOutRight;
-}
-
-@-webkit-keyframes slideInRight {
-    from {
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
+    80% {
         opacity: 0;
     }
 
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(25%, 0, 0);
+        transform: translate3d(25%, 0, 0);
+    }
+}
+.slide-out-right {
+    animation-name: slide-out-right;
+}
+
+@-webkit-keyframes slide-in-right {
+    0% {
+        -webkit-transform: translate3d(25%, 0, 0);
+        transform: translate3d(25%, 0, 0);
+        opacity: 0;
+    }
+
+    80% {
         opacity: 1;
     }
-}
-.slideInRight {
-    -webkit-animation-name: slideInRight;
-    animation-name: slideInRight;
-}
 
-
-/* ---------- slide left: ---------- */
-@keyframes slideInLeft {
-    from {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
-        opacity: 0;
-    }
-
-    to {
+    100% {
+        opacity: 1;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        opacity: 1;
     }
 }
-.slideInLeft {
-    -webkit-animation-name: slideInLeft;
-    animation-name: slideInLeft;
+.slide-in-right {
+    animation-name: slide-in-right;
 }
