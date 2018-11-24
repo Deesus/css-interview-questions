@@ -9,7 +9,6 @@
             <div class="panel-1">I should be above</div>
             <div class="panel-2">I should be below</div>
         </template>
-
     </question>
 
 </template>
@@ -20,9 +19,12 @@
 
     export default {
         name: 'QuestionOverlappingLayers',
+
+        title: 'Overlapping Layers',
+
         data() {
             return {
-                description: "These two panels are overlapping. Make the yellow panel display above the blue one."
+                description: 'These two panels are overlapping. Make the yellow panel display above the blue one.',
             }
         },
         components: {

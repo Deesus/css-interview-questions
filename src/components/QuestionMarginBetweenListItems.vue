@@ -21,6 +21,8 @@
     export default {
         name: 'QuestionMarginBetweenListItems',
 
+        title: 'Margin Between List Items',
+
         data() {
             return {
                 description: "Add 12px margin between each list item, but not the first one."

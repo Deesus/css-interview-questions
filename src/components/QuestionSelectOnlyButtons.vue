@@ -42,6 +42,8 @@
     export default {
         name: 'QuestionSelectOnlyButtons',
 
+        title: 'Color Only the Buttons',
+
         data() {
             return {
                 description: "Select the buttons and set their background color to 'red.' However, the input fields should remain white."

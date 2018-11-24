@@ -6,7 +6,7 @@
         </template>
 
         <template slot="question-modal">
-            <div>
+            <div class="container">
                 <button class="button" type="button">Horizontally Center Me</button>
             </div>
         </template>
@@ -20,6 +20,8 @@
 
     export default {
         name: 'QuestionHCenterElement',
+
+        title: 'Horizontal Centering',
 
         data() {
             return {
@@ -39,8 +41,7 @@
 
 
 <style scoped>
-    /* specific to this component: */
-    .question {
+    .container {
         border: 1px dashed red;
     }
 </style>

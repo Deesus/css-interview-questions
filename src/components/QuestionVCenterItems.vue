@@ -1,5 +1,7 @@
 <template>
+
     <question>
+
         <template slot="question-description">
             {{ this.description }}
         </template>
@@ -15,7 +17,9 @@
             <input type="checkbox" checked="checked">
             <div class="empty-box"></div>
         </template>
+
     </question>
+
 </template>
 
 
@@ -24,12 +28,16 @@
 
     export default {
         name: 'QuestionVCenterItems',
+
+        title: 'Vertically Align in a Row',
+
         data() {
             return {
                 description: "Currently, all the elements in the container are stacked on top of each other -- correct " +
                              "this by displaying all of them in a single row and vertically centering them inside the container."
             }
         },
+
         components: {
             Question
         }

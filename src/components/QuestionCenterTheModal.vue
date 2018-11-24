@@ -19,7 +19,9 @@
 
     export default {
         name: 'QuestionCenterTheModal',
-        components: {Question},
+
+        title: 'Center the Modal',
+
         data() {
             return {
                 description: "Center the modal both vertically and horizontally (with respect to the container). Note that the " +
@@ -39,13 +41,16 @@
             }
         },
 
+        components: {
+            Question
+        },
+
         mounted() {
 
             // dynamically generate modal width between 200px-800px every 2.6s:
             setInterval(()=> {
                 this.modalWidth = Math.floor((Math.random() * 600) + 200);
             }, 2600);
-
         }
     }
 </script>

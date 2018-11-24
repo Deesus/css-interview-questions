@@ -18,6 +18,8 @@
     export default {
         name: 'QuestionTwoImagesAndMarginInARow',
 
+        title: 'Two Images Spaced in a Row',
+
         data() {
             return {
                 description: "Fit both the images on a single row with a 40px margin between them. Ensure both images are of " +
