@@ -44,6 +44,7 @@
         height: 100%;
         overflow-y: auto;
         border-right: 2px solid rgb(201, 201, 201);
+        background: white;
     }
 
     .side-nav__item {

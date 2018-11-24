@@ -34,5 +34,6 @@
     #app-layout {
         min-height: 100vh;
         overflow-x: hidden;     /* prevents animation sliding from creating horizontal scrollbar */
+        background: rgb(244, 244, 239);
     }
 </style>

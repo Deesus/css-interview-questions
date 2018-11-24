@@ -1,12 +1,18 @@
 <template>
+
     <div class="question">
         <div class="question__description" @click="openQuestionModal">
             <slot name="question-description"></slot>
         </div>
-        <div class="question__modal" v-if="showQuestionModal" @click="openQuestionModal">
+        <div class="question__modal question-modal" v-if="shouldShowQuestionModal">
+            <div class="question-modal__header">
+                <span>{{ this.title }}</span>
+                <i class="icon icon--close" @click="closeQuestionModal">X</i>
+            </div>
             <slot name="question-modal"></slot>
         </div>
     </div>
+
 </template>
 
 
@@ -14,7 +20,7 @@
     export default {
         name: 'Question',
 
-        props: [],
+        props: ['title'],
 
         data() {
             return {};
@@ -22,14 +28,17 @@
 
         methods: {
             openQuestionModal() {
-                // TODO: change toggle onclick to true and have a close modal setting the value to false:
-                this.$store.commit('toggleQuestionModal', !this.showQuestionModal);
+                this.$store.commit('showQuestionModal', true);
+            },
+
+            closeQuestionModal() {
+                this.$store.commit('showQuestionModal', false);
             }
         },
 
         computed: {
-            showQuestionModal() {
-                return this.$store.state.showQuestionModal;
+            shouldShowQuestionModal() {
+                return this.$store.state.shouldShowQuestionModal;
             }
         }
     }
@@ -46,7 +55,6 @@
     .question__description {
         pointer-events: all;
         padding: 16px 8px;
-        border: 2px solid slategray;
 
         max-width: calc(100% - 280px);
         margin-left: 280px;
@@ -56,7 +64,7 @@
 
     .question__modal {
         position: fixed;
-        background: rgba(245, 245, 245, 0.8);
+        background: white;
         left: 0;
         top: 0;
         min-height: 100vh;
@@ -64,4 +72,14 @@
         pointer-events: all;
     }
 
+    .question-modal__header {
+        padding: 8px 12px;
+        text-align: center;
+        position: relative;
+    }
+
+    .icon {
+        cursor: pointer;
+
+    }
 </style>

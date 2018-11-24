@@ -8,7 +8,7 @@ export default new Vuex.Store({
     state: {
         questionList: questionList,
         selectedQuestionIndex: 0,
-        showQuestionModal: false
+        shouldShowQuestionModal: false
     },
 
     mutations: {
@@ -17,8 +17,8 @@ export default new Vuex.Store({
             state.selectedQuestionIndex = payload;
         },
 
-        toggleQuestionModal(state, payload) {
-            state.showQuestionModal = payload;
+        showQuestionModal(state, payload) {
+            state.shouldShowQuestionModal = payload;
         }
     }
 });

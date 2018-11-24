@@ -1,6 +1,6 @@
 <template>
 
-    <question>
+    <base-question :title="this.title">
         <template slot="question-description">
             {{ this.description }}
         </template>
@@ -9,26 +9,30 @@
             <div class="panel-1">I should be above</div>
             <div class="panel-2">I should be below</div>
         </template>
-    </question>
+    </base-question>
 
 </template>
 
 
 <script>
-    import Question from './BaseQuestion.vue';
+    import BaseQuestion from './BaseQuestion.vue';
+    const QUESTION_TITLE = 'Overlapping Layers';
 
     export default {
         name: 'QuestionOverlappingLayers',
 
-        title: 'Overlapping Layers',
+        // TODO: replace custom attribute, `title`, so that we don't have to use a constant.
+        title: QUESTION_TITLE,
 
         data() {
             return {
                 description: 'These two panels are overlapping. Make the yellow panel display above the blue one.',
+                title: QUESTION_TITLE
             }
         },
+
         components: {
-            Question
+            BaseQuestion
         }
     }
 </script>
