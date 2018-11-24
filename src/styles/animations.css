@@ -1,13 +1,6 @@
 /* ==================================================
     main animation classes:
    ==================================================*/
-.question {
-    backface-visibility: hidden;    /* hints browser to use hardware acceleration */
-    will-change: transform;
-    min-height: 100vh;
-    width: 100%;
-}
-
 .animated {
     -webkit-animation-duration: 400ms;
     animation-duration: 400ms;

@@ -1,23 +1,20 @@
 <template>
     <div id="app-layout">
         <section-side-nav></section-side-nav>
-        <section-main>
-            <transition
-                    mode="out-in"
-                    name="slide"
-                    enter-active-class="slide-in-right animated"
-                    leave-active-class="slide-out-right animated"
-            >
-                <router-view></router-view>
-            </transition>
-        </section-main>
+        <transition
+                mode="out-in"
+                name="slide"
+                enter-active-class="slide-in-right animated"
+                leave-active-class="slide-out-right animated"
+        >
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
 
 
 <script>
     import SectionSideNav from './components/SectionSideNav.vue';
-    import SectionMain from './components/SectionMain.vue';
 
     export default {
         name: 'App',
@@ -27,8 +24,7 @@
         },
 
         components: {
-            'section-side-nav': SectionSideNav,
-            'section-main': SectionMain
+            'section-side-nav': SectionSideNav
         }
     }
 </script>
@@ -37,5 +33,6 @@
 <style scoped>
     #app-layout {
         min-height: 100vh;
+        overflow-x: hidden;     /* prevents animation sliding from creating horizontal scrollbar */
     }
 </style>

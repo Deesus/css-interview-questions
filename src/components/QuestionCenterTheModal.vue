@@ -15,7 +15,7 @@
 
 
 <script>
-    import Question from './Question.vue';
+    import Question from './BaseQuestion.vue';
 
     export default {
         name: 'QuestionCenterTheModal',
