@@ -37,7 +37,7 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
     .side-nav {
         width: 280px;
         position: fixed;
@@ -45,11 +45,11 @@
         overflow-y: auto;
         border-right: 2px solid rgb(201, 201, 201);
         background: white;
-    }
 
-    .side-nav__item {
-        padding: 10px 14px;
-        border-bottom: 1px solid rgb(201, 201, 201);
-        cursor: pointer;
+        &__item {
+             padding: 10px 14px;
+             border-bottom: 1px solid rgb(201, 201, 201);
+             cursor: pointer;
+         }
     }
 </style>

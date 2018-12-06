@@ -1,6 +1,9 @@
-/* ==================================================
-    main animation classes:
-   ==================================================*/
+@import "../base/_constants";
+
+
+// ==================================================
+//  main animation classes:
+// ==================================================
 .animated {
     -webkit-animation-duration: 400ms;
     animation-duration: 400ms;
@@ -8,16 +11,13 @@
     animation-fill-mode: both;
 }
 
-/* ==================================================
-    slides:
-   ==================================================*/
 
-.slide-out-right,
-.slide-in-right {
-    animation-timing-function: ease-in-out;
-}
+// ==================================================
+//  slides:
+// ==================================================
 
-/* ---------- slide right: ---------- */
+
+// ---------- slide right: ----------
 @keyframes slide-out-right {
     0% {
         -webkit-transform: translate3d(0, 0, 0);
@@ -36,6 +36,7 @@
     }
 }
 .slide-out-right {
+    animation-timing-function: ease-in-out;
     animation-name: slide-out-right;
 }
 
@@ -57,5 +58,6 @@
     }
 }
 .slide-in-right {
+    animation-timing-function: ease-in-out;
     animation-name: slide-in-right;
 }

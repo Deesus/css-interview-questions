@@ -38,7 +38,7 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
     .question-modal {
         position: relative;
         text-align: center;
