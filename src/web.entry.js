@@ -13,7 +13,7 @@ import store from './store';
 import VueRouter from 'vue-router';
 Vue.use (VueRouter);
 
-import routes from './utils/routes';
+import routes from './routes';
 const router = new VueRouter({
    routes
 });

@@ -38,8 +38,11 @@
 
 
 <style scoped lang="less">
+    @import "../styles/base/_constants";
+
+
     .side-nav {
-        width: 280px;
+        width: @side-nav-width;
         position: fixed;
         height: 100%;
         overflow-y: auto;

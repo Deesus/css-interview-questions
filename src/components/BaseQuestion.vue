@@ -1,18 +1,24 @@
 <template>
+    <div class="question" @click.stop="showQuestionMarkup">
 
-    <div class="question">
-        <div class="question__description" @click="openQuestionModal">
-            <slot name="question-description"></slot>
+        <!-- ---------- title: ---------- -->
+        <div class="question__title">{{ this.title }}</div>
+
+        <!-- ---------- image of desired result: ---------- -->
+        <figure class="question__figure">
+            <img src="https://placeimg.com/640/480/people" alt="">
+        </figure>
+
+        <!-- ---------- the question's markup is injected into the slot: ---------- -->
+        <div class="question__markup" v-if="shouldShowQuestionMarkup">
+            <i class="icon icon--close" @click.stop="hideQuestionMarkup">X</i>
+            <slot name="question-markup"></slot>
         </div>
-        <div class="question__modal question-modal" v-if="shouldShowQuestionModal">
-            <div class="question-modal__header">
-                <span>{{ this.title }}</span>
-                <i class="icon icon--close" @click="closeQuestionModal">X</i>
-            </div>
-            <slot name="question-modal"></slot>
-        </div>
+
+        <!-- ---------- question description: ---------- -->
+        <div class="question__description">{{ this.description }}</div>
+
     </div>
-
 </template>
 
 
@@ -20,25 +26,29 @@
     export default {
         name: 'Question',
 
-        props: ['title'],
+
+        props: ['title', 'imagePath', 'description'],
+
 
         data() {
             return {};
         },
 
+
         methods: {
-            openQuestionModal() {
-                this.$store.commit('showQuestionModal', true);
+            showQuestionMarkup() {
+                this.$store.commit('showQuestionMarkup', true);
             },
 
-            closeQuestionModal() {
-                this.$store.commit('showQuestionModal', false);
+            hideQuestionMarkup(e) {
+                this.$store.commit('showQuestionMarkup', false);
             }
         },
 
+
         computed: {
-            shouldShowQuestionModal() {
-                return this.$store.state.shouldShowQuestionModal;
+            shouldShowQuestionMarkup() {
+                return this.$store.state.shouldShowQuestionMarkup;
             }
         }
     }
@@ -50,41 +60,45 @@
 
 
     .question {
-        pointer-events: none;           // since it overlaps the entire viewport
-        backface-visibility: hidden;    // for animation; hints browser to use hardware acceleration
-        will-change: transform;
+        padding: 0;
+        margin-left: @side-nav-width;
+        width: 400px;
+        height: 350px;
+
+        &__title {
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: center;
+            color: @font-color-default;
+            font-size: 1.4rem;
+            line-height: 1;
+            transition: 100ms;
+        }
+
+        &__figure {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+
+        &__markup {
+
+        }
 
         &__description {
-            pointer-events: all;
-            padding: 16px 8px;
-
-            max-width: calc(~"100% - @{side-nav-width}");
-            margin-left: @side-nav-width;
-            min-height: 100vh;
-            width: 100%;
+            padding: 16px;
         }
-
-        &__modal {
-            position: fixed;
-            background: white;
-            left: 0;
-            top: 0;
-            min-height: 100vh;
-            min-width: 100vw;
-            pointer-events: all;
-        }
-
-        &__header {
-            padding: 8px 12px;
-            text-align: center;
-            position: relative;
-        }
-    }
-
-
-    /* TODO: move to utility partial or make into component: */
-    .icon {
-        cursor: pointer;
-
     }
 </style>

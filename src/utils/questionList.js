@@ -1,10 +1,10 @@
-import QuestionCenterTheModal           from '../components/QuestionCenterTheModal.vue';
-import QuestionSelectOnlyButtons        from '../components/QuestionSelectOnlyButtons.vue';
-import QuestionTwoImagesSpacedInARow    from '../components/QuestionTwoImagesSpacedInARow.vue';
-import QuestionVCenterItems             from '../components/QuestionVCenterItems.vue';
-import QuestionHCenterElement           from '../components/QuestionHCenterElement.vue';
-import QuestionOverlappingLayers        from '../components/QuestionOverlappingLayers.vue';
-import QuestionMarginBetweenListItems   from '../components/QuestionMarginBetweenListItems.vue';
+import QuestionCenterTheModal           from '../components/Questions/QuestionCenterTheModal.vue';
+import QuestionSelectOnlyButtons        from '../components/Questions/QuestionSelectOnlyButtons.vue';
+import QuestionTwoImagesSpacedInARow    from '../components/Questions/QuestionTwoImagesSpacedInARow.vue';
+import QuestionVCenterItems             from '../components/Questions/QuestionVCenterItems.vue';
+import QuestionHCenterElement           from '../components/Questions/QuestionHCenterElement.vue';
+import QuestionOverlappingLayers        from '../components/Questions/QuestionOverlappingLayers.vue';
+import QuestionMarginBetweenListItems   from '../components/Questions/QuestionMarginBetweenListItems.vue';
 
 
 

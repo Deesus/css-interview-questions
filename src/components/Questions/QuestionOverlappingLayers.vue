@@ -1,21 +1,13 @@
 <template>
-
-    <base-question :title="this.title">
-        <template slot="question-description">
-            {{ this.description }}
-        </template>
-
-        <template slot="question-modal">
-            <div class="panel-1">I should be above</div>
-            <div class="panel-2">I should be below</div>
-        </template>
-    </base-question>
-
+    <question :description="description" :title="title">
+        <div class="panel-1">I should be above</div>
+        <div class="panel-2">I should be below</div>
+    </question>
 </template>
 
 
 <script>
-    import BaseQuestion from './BaseQuestion.vue';
+    import Question from '../BaseQuestion.vue';
     const QUESTION_TITLE = 'Overlapping Layers';
 
     export default {
@@ -26,13 +18,13 @@
 
         data() {
             return {
-                description: 'These two panels are overlapping. Make the yellow panel display above the blue one.',
-                title: QUESTION_TITLE
+                title: QUESTION_TITLE,
+                description: 'These two panels are overlapping. Make the yellow panel display above the blue one.'
             }
         },
 
         components: {
-            BaseQuestion
+            Question
         }
     }
 </script>
