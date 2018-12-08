@@ -110,12 +110,13 @@
 
 
     .question {
+        grid-area: main;
         padding: 0;
-        margin-left: @side-nav-width;
         width: 400px;
+        height: 0;
         min-height: 350px;
         box-shadow: @box-shadow;
-        transition: 200ms all ease-in-out;
+        transition: 800ms all ease-in-out;
         will-change: transform;
         background: #fafafa;
         overflow: hidden;
@@ -123,6 +124,8 @@
 
         &:hover {
             width: 500px;
+            min-height: 350px;
+            height: 0;
             box-shadow: @box-shadow-hover;
 
             .question__title {
@@ -142,8 +145,6 @@
             position: fixed;
             height: 100%;
             width: 100%;
-            left: 0;
-            top: 0;
             margin: 0;
             z-index: 120;
             cursor: default;

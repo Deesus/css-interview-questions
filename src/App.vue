@@ -30,10 +30,21 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
+    @import "./styles/base/_constants";
+
+
     #app-layout {
+        display: grid;
+        grid-template-columns: @side-nav-width 1fr;
+        grid-template-rows: 100%;
+
+        justify-items: center;
+        align-items: center;
+        grid-gap: 1px;
+        grid-template-areas: "side-nav main";
         min-height: 100vh;
-        overflow-x: hidden;     /* prevents animation sliding from creating horizontal scrollbar */
+        overflow-x: hidden;     // prevents animation sliding from creating horizontal scrollbar
         background: rgb(244, 244, 239);
     }
 </style>

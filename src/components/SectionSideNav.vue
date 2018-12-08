@@ -43,7 +43,10 @@
 
     .side-nav {
         width: @side-nav-width;
+        grid-area: side-nav;
         position: fixed;
+        left: 0;
+        top: 0;
         height: 100%;
         overflow-y: auto;
         border-right: 2px solid rgb(201, 201, 201);
