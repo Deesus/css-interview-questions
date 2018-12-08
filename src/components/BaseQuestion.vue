@@ -1,26 +1,30 @@
 <template>
-    <div class="question" @click.stop="showQuestionMarkup">
+    <div :class="questionCardStyles" @click.stop="showQuestionMarkup">
 
         <!-- ---------- title: ---------- -->
-        <div class="question__title">{{ this.title }}</div>
-
-        <!-- ---------- image of desired result: ---------- -->
-        <figure class="question__figure">
-            <img src="https://placeimg.com/540/380/people" alt="">
-            <figcaption class="question__fig-caption">
-                <span>Start Quiz</span>
-                <external-link-icon class="icon"></external-link-icon>
-            </figcaption>
-        </figure>
-
-        <!-- ---------- the question's markup is injected into the slot: ---------- -->
-        <div class="question__markup" v-if="shouldShowQuestionMarkup">
-            <i class="icon icon--close" @click.stop="hideQuestionMarkup">X</i>
-            <slot name="question-markup"></slot>
+        <div :class="questionTitleStyles">
+            {{ this.title }}
+            <i class="question__close-icon" @click.stop="hideQuestionMarkup">✕</i>
         </div>
 
-        <!-- ---------- question description: ---------- -->
-        <div class="question__description">{{ this.description }}</div>
+        <!-- ---------- the question's markup is injected into the slot: ---------- -->
+        <div v-if="shouldShowQuestionMarkup">
+            <slot></slot>
+        </div>
+
+        <template v-else>
+            <!-- ---------- image of desired result: ---------- -->
+            <figure class="question__figure">
+                <img src="https://placeimg.com/540/380/people" alt="">
+                <figcaption class="question__fig-caption">
+                    <span>Start Quiz</span>
+                    <external-link-icon class="icon"/>
+                </figcaption>
+            </figure>
+
+            <!-- ---------- question description: ---------- -->
+            <div class="question__description">{{ this.description }}</div>
+        </template>
 
     </div>
 </template>
@@ -75,6 +79,20 @@
         computed: {
             shouldShowQuestionMarkup() {
                 return this.$store.state.shouldShowQuestionMarkup;
+            },
+
+            questionCardStyles() {
+                return {
+                    'question': true,
+                    'question--fullscreen': this.shouldShowQuestionMarkup === true
+                }
+            },
+
+            questionTitleStyles() {
+                return {
+                    'question__title': true,
+                    'question__title--fullscreen': this.shouldShowQuestionMarkup === true
+                };
             }
         }
     }
@@ -84,6 +102,12 @@
 <style scoped lang="less">
     @import "../styles/base/_constants";
 
+    .mixin-visible-question-title {
+        opacity: 1;
+        padding: 10px 16px;
+        height: 32px;
+    }
+
 
     .question {
         padding: 0;
@@ -91,7 +115,7 @@
         width: 400px;
         min-height: 350px;
         box-shadow: @box-shadow;
-        transition: 100ms all ease-in-out;
+        transition: 200ms all ease-in-out;
         will-change: transform;
         background: #fafafa;
         overflow: hidden;
@@ -102,14 +126,27 @@
             box-shadow: @box-shadow-hover;
 
             .question__title {
-                padding: 10px 16px;
-                height: 32px;
-                opacity: 1;
+                .mixin-visible-question-title();
             }
 
             .question__fig-caption {
                 opacity: 0.25;
             }
+        }
+
+        &&--fullscreen {
+            .question__title {
+                .mixin-visible-question-title();
+            }
+
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            margin: 0;
+            z-index: 120;
+            cursor: default;
         }
 
         &__title {
@@ -123,6 +160,11 @@
             font-size: 1.4rem;
             line-height: 1;
             transition: 200ms;
+            border-bottom: 1px solid transparent;
+
+            &&--fullscreen {
+                border-bottom-color: @font-color-muted;
+            }
         }
 
         &__figure {
@@ -141,7 +183,7 @@
             }
         }
 
-        .question__fig-caption {
+        &__fig-caption {
             background: black;
             width: 100%;
             height: 100%;
@@ -163,13 +205,17 @@
             }
         }
 
-
-        &__markup {
-
-        }
-
         &__description {
             padding: 16px;
+        }
+
+        &__close-icon {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 3rem;
+            line-height: 1;
+            cursor: pointer;
         }
     }
 </style>
