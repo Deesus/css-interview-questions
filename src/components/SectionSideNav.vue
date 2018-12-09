@@ -45,6 +45,7 @@
         width: @side-nav-width;
         grid-area: side-nav;
         position: fixed;
+        padding: 0 14px;
         left: 0;
         top: 0;
         height: 100%;
@@ -53,9 +54,14 @@
         background: white;
 
         &__item {
-             padding: 10px 14px;
-             border-bottom: 1px solid rgb(201, 201, 201);
-             cursor: pointer;
+            padding: 4px 0;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+
+            &:hover {
+                color: @font-color-blue;
+                border-bottom-color: @font-color-blue;
+            }
          }
     }
 </style>

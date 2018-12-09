@@ -61,13 +61,21 @@
 
 
         data() {
-            return {};
+            return {
+                isModalAnimationActive: false
+            };
         },
 
 
         methods: {
             showQuestionMarkup() {
                 this.$store.commit('showQuestionMarkup', true);
+
+                // when the modal is expanded, we apply an 'animation-active' class for the duration of the animation:
+                {
+                    this.isModalAnimationActive = true;
+                    setTimeout(()=> this.isModalAnimationActive = false, 500);
+                }
             },
 
             hideQuestionMarkup(e) {
@@ -84,7 +92,8 @@
             questionCardCssClasses() {
                 return {
                     'question': true,
-                    'question--fullscreen': this.shouldShowQuestionMarkup === true
+                    'question--fullscreen': this.shouldShowQuestionMarkup === true,
+                    'expand-modal-active': this.isModalAnimationActive === true
                 }
             },
 
@@ -101,6 +110,7 @@
 
 <style scoped lang="less">
     @import "../styles/base/_constants";
+    @import (reference) "../styles/utils/_animations";
 
     @transition-speed-slow: 500ms;
     @transition-speed-fast: 200ms;
@@ -110,6 +120,7 @@
     @question-min-height: 350px;
     @question-width: 400px;
     @question-onhover-width: 500px;
+
 
     .question {
         grid-area: main;
@@ -126,6 +137,7 @@
         overflow: hidden;
         cursor: pointer;
 
+
         &:hover {
             width: @question-onhover-width;
             box-shadow: @box-shadow-hover;
@@ -139,14 +151,17 @@
             min-height: @question-min-height;
             min-width: @question-width;
             position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            left: 0;
+            top: 0;
             height: 100%;
             width: 100%;
             margin: 0;
             z-index: 120;
             cursor: default;
+
+            &.expand-modal-active {
+                .expand-modal-active();
+            }
         }
 
         &__title {

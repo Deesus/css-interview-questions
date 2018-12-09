@@ -76,7 +76,7 @@
     }
 }
 .fade-enter-active {
-    animation: fade-in 1200ms ease-in-out;
+    animation: fade-in 1100ms ease-in-out;
     animation-fill-mode: both;
 }
 
@@ -91,6 +91,20 @@
     }
 }
 .fade-out-active {
-    animation: fade-out 1200ms ease-in-out;
+    animation: fade-out 1100ms ease-in-out;
     animation-fill-mode: both;
+}
+
+
+// ==================================================
+//  misc:
+// ==================================================
+
+// Due to a bug in Chromium <https://stackoverflow.com/questions/27385126/chrome-font-appears-blurry>, the `transform`
+// property makes everything inside the modal blurry. In order to continue using it and prevent blurriness, we apply
+// this animation class only temporarily (since we only need it to center the modal until if expands fullscreen):
+.expand-modal-active {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
