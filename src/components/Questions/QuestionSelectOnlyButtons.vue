@@ -32,15 +32,16 @@
 
 <script>
     import Question from '../BaseQuestion.vue';
+    const QUESTION_TITLE = 'Color Only the Buttons';
 
     export default {
         name: 'QuestionSelectOnlyButtons',
 
-        title: 'Color Only the Buttons',
+        title: QUESTION_TITLE,
 
         data() {
             return {
-                title: "Color Only the Buttons",
+                title: QUESTION_TITLE,
                 description: "Select the buttons and set their background color to 'red.' However, the input fields should remain white."
             };
         },

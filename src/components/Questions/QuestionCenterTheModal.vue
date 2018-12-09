@@ -9,15 +9,16 @@
 
 <script>
     import Question from '../BaseQuestion.vue';
+    const QUESTION_TITLE = 'Center the Modal';
 
     export default {
         name: 'QuestionCenterTheModal',
 
-        title: 'Center the Modal',
+        title: QUESTION_TITLE,
 
         data() {
             return {
-                title: "Center the Modal",
+                title: QUESTION_TITLE,
                 description: "Center the modal both vertically and horizontally (with respect to the container). Note that the " +
                     "width of the modal is randomly generated -- you'll have to figure out a way for the modal to be centered " +
                     "regardless of its width",

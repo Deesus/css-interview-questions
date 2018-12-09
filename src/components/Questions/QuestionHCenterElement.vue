@@ -11,15 +11,16 @@
 
 <script>
     import Question from '../BaseQuestion.vue';
+    const QUESTION_TITLE = 'Horizontal Centering';
 
     export default {
         name: 'QuestionHCenterElement',
 
-        title: 'Horizontal Centering',
+        title: QUESTION_TITLE,
 
         data() {
             return {
-                title: "Horizontal Centering",
+                title: QUESTION_TITLE,
                 description: "Horizontally center the button inside it's container"
             };
         },

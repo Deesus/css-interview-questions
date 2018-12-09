@@ -13,7 +13,6 @@
     export default {
         name: 'QuestionOverlappingLayers',
 
-        // TODO: replace custom attribute, `title`, so that we don't have to use a constant.
         title: QUESTION_TITLE,
 
         data() {

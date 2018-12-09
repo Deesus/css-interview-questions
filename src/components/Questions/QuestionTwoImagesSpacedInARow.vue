@@ -7,15 +7,16 @@
 
 <script>
     import Question from '../BaseQuestion.vue';
+    const QUESTION_TITLE = 'Two Images Spaced in a Row';
 
     export default {
         name: 'QuestionTwoImagesAndMarginInARow',
 
-        title: 'Two Images Spaced in a Row',
+        title: QUESTION_TITLE,
 
         data() {
             return {
-                title: "Two Images Spaced in a Row",
+                title: QUESTION_TITLE,
                 description: "Fit both the images on a single row with a 40px margin between them. Ensure both images are of " +
                              "equal size, and that, together, they take up the entire width of the container (minus the 40px gap between them)." +
                              "Hint: you'll want to give the images responsive widths."

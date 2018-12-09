@@ -15,15 +15,16 @@
 
 <script>
     import Question from '../BaseQuestion.vue';
+    const QUESTION_TITLE = 'Vertically Align in a Row';
 
     export default {
         name: 'QuestionVCenterItems',
 
-        title: 'Vertically Align in a Row',
+        title: QUESTION_TITLE,
 
         data() {
             return {
-                title: "Vertically Align in a Row",
+                title: QUESTION_TITLE,
                 description: "Currently, all the elements in the container are stacked on top of each other -- correct " +
                              "this by displaying all of them in a single row and vertically centering them inside the container."
             }

@@ -12,15 +12,16 @@
 
 <script>
     import Question from '../BaseQuestion.vue';
+    const QUESTION_TITLE = 'Margin Between List Items';
 
     export default {
         name: 'QuestionMarginBetweenListItems',
 
-        title: 'Margin Between List Items',
+        title: QUESTION_TITLE,
 
         data() {
             return {
-                title: "Margin Between List Items",
+                title: QUESTION_TITLE,
                 description: "Add 12px margin between each list item, but not the first one."
             };
         },

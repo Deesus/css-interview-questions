@@ -1,31 +1,31 @@
 <template>
-    <div :class="questionCardStyles" @click.stop="showQuestionMarkup">
+    <div :class="questionCardCssClasses" @click.stop="showQuestionMarkup">
 
         <!-- ---------- title: ---------- -->
-        <div :class="questionTitleStyles">
+        <div :class="questionTitleCssClasses">
             {{ this.title }}
-            <i class="question__close-icon" @click.stop="hideQuestionMarkup">✕</i>
+            <i v-if="shouldShowQuestionMarkup" class="question__close-icon" @click.stop="hideQuestionMarkup">✕</i>
         </div>
 
         <!-- ---------- the question's markup is injected into the slot: ---------- -->
-        <div v-if="shouldShowQuestionMarkup">
-            <slot></slot>
-        </div>
+        <transition-group name="fade">
+            <div class="problem-set" v-if="shouldShowQuestionMarkup" :key="'maximized'">
+                <slot></slot>
+            </div>
+            <div v-if="!shouldShowQuestionMarkup" :key="'minimized'">
+                <!-- ---------- image of desired result: ---------- -->
+                <figure class="question__figure">
+                    <img src="https://placeimg.com/740/380/people" alt="">
+                    <figcaption class="question__fig-caption">
+                        <span>Start Quiz</span>
+                        <external-link-icon class="icon"/>
+                    </figcaption>
+                </figure>
 
-        <template v-else>
-            <!-- ---------- image of desired result: ---------- -->
-            <figure class="question__figure">
-                <img src="https://placeimg.com/540/380/people" alt="">
-                <figcaption class="question__fig-caption">
-                    <span>Start Quiz</span>
-                    <external-link-icon class="icon"/>
-                </figcaption>
-            </figure>
-
-            <!-- ---------- question description: ---------- -->
-            <div class="question__description">{{ this.description }}</div>
-        </template>
-
+                <!-- ---------- question description: ---------- -->
+                <div class="question__description">{{ this.description }}</div>
+            </div>
+        </transition-group>
     </div>
 </template>
 
@@ -81,14 +81,14 @@
                 return this.$store.state.shouldShowQuestionMarkup;
             },
 
-            questionCardStyles() {
+            questionCardCssClasses() {
                 return {
                     'question': true,
                     'question--fullscreen': this.shouldShowQuestionMarkup === true
                 }
             },
 
-            questionTitleStyles() {
+            questionTitleCssClasses() {
                 return {
                     'question__title': true,
                     'question__title--fullscreen': this.shouldShowQuestionMarkup === true
@@ -102,35 +102,33 @@
 <style scoped lang="less">
     @import "../styles/base/_constants";
 
-    .mixin-visible-question-title {
-        opacity: 1;
-        padding: 10px 16px;
-        height: 32px;
-    }
+    @transition-speed-slow: 500ms;
+    @transition-speed-fast: 200ms;
 
+    @question-title-height: 32px;
+
+    @question-min-height: 350px;
+    @question-width: 400px;
+    @question-onhover-width: 500px;
 
     .question {
         grid-area: main;
+        display: table;
+        border-collapse: collapse;
         padding: 0;
-        width: 400px;
+        width: @question-width;
         height: 0;
-        min-height: 350px;
+        min-height: @question-min-height;
         box-shadow: @box-shadow;
-        transition: 800ms all ease-in-out;
+        transition: @transition-speed-slow width ease-in-out, @transition-speed-slow height ease-in-out;
         will-change: transform;
         background: #fafafa;
         overflow: hidden;
         cursor: pointer;
 
         &:hover {
-            width: 500px;
-            min-height: 350px;
-            height: 0;
+            width: @question-onhover-width;
             box-shadow: @box-shadow-hover;
-
-            .question__title {
-                .mixin-visible-question-title();
-            }
 
             .question__fig-caption {
                 opacity: 0.25;
@@ -138,11 +136,12 @@
         }
 
         &&--fullscreen {
-            .question__title {
-                .mixin-visible-question-title();
-            }
-
+            min-height: @question-min-height;
+            min-width: @question-width;
             position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             height: 100%;
             width: 100%;
             margin: 0;
@@ -151,8 +150,8 @@
         }
 
         &__title {
-            height: 0;
-            opacity: 0;
+            padding: 10px 16px;
+            height: @question-title-height;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -179,8 +178,9 @@
 
             img {
                 height: auto;
+                width: auto;
                 max-width: 100%;
-                max-height: 100%;
+                max-height: 300px;
             }
         }
 
