@@ -1,11 +1,17 @@
 <template>
     <div id="app-layout">
-        <section-side-nav></section-side-nav>
+        <transition name="slide"
+                    enter-active-class="slide-in-left animate-700"
+                    leave-active-class="slide-out-left animate-700"
+        >
+            <section-side-nav v-if="shouldShowSideNav"></section-side-nav>
+        </transition>
+
         <transition
                 mode="out-in"
-                name="slide"
-                enter-active-class="slide-in-right animated"
-                leave-active-class="slide-out-right animated"
+                name="fade-slide"
+                enter-active-class="fade-slide-in-right animate-400"
+                leave-active-class="fade-slide-out-right animate-400"
         >
             <router-view></router-view>
         </transition>
@@ -23,6 +29,12 @@
             return { };
         },
 
+        computed: {
+            shouldShowSideNav() {
+                return this.$store.state.shouldShowQuestionMarkup === false;
+            }
+        },
+
         components: {
             'section-side-nav': SectionSideNav
         }
@@ -35,16 +47,16 @@
 
 
     #app-layout {
+        max-width: 1200px;
+        margin: auto;
         display: grid;
         grid-template-columns: @side-nav-width 1fr;
-        grid-template-rows: 100%;
-
+        grid-template-rows: auto;
         justify-items: center;
         align-items: center;
         grid-gap: 1px;
         grid-template-areas: "side-nav main";
         min-height: 100vh;
-        overflow-x: hidden;     // prevents animation sliding from creating horizontal scrollbar
-        background: rgb(244, 244, 239);
+        overflow-x: visible;     // n.b. set to hidden to prevent animation sliding from creating horizontal scrollbar
     }
 </style>

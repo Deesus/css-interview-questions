@@ -2,10 +2,23 @@
 
 
 // ==================================================
-//  main animation classes:
+//  animation duration classes:
 // ==================================================
-.animated {
+// n.b. we keep the animation durations as a separate class due to how Vue toggles classes in <transition> tags
+// also n.b. a gotcha in Vue transitions: we can't use attribute selectors (e.g. `[class*="animate"]`)
+
+.animate-400 {
     animation-duration: 400ms;
+    animation-fill-mode: both;
+}
+
+.animate-500 {
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+}
+
+.animate-700 {
+    animation-duration: 700ms;
     animation-fill-mode: both;
 }
 
@@ -14,9 +27,8 @@
 //  slides:
 // ==================================================
 
-
-// ---------- slide right: ----------
-@keyframes slide-out-right {
+// ---------- fade-slide-out right: ----------
+@keyframes fade-slide-out-right {
     0% {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
@@ -33,12 +45,14 @@
         transform: translate3d(25%, 0, 0);
     }
 }
-.slide-out-right {
+
+.fade-slide-out-right {
     animation-timing-function: ease-in-out;
-    animation-name: slide-out-right;
+    animation-name: fade-slide-out-right;
 }
 
-@keyframes slide-in-right {
+// ---------- fade-slide-in right: ----------
+@keyframes fade-slide-in-right {
     0% {
         -webkit-transform: translate3d(25%, 0, 0);
         transform: translate3d(25%, 0, 0);
@@ -55,9 +69,42 @@
         transform: translate3d(0, 0, 0);
     }
 }
-.slide-in-right {
+
+.fade-slide-in-right {
     animation-timing-function: ease-in-out;
-    animation-name: slide-in-right;
+    animation-name: fade-slide-in-right;
+}
+
+// ---------- slide-in left: ----------
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-1000px) translateZ(0);
+    }
+
+    100% {
+        transform: translateX(0) translateZ(0);
+    }
+}
+
+.slide-in-left {
+    animation-timing-function: ease-in-out;
+    animation-name: slide-in-left;
+}
+
+// ---------- slide-out left: ----------
+@keyframes slide-out-left {
+    0% {
+        transform: translateX(0) translateZ(0);
+    }
+
+    100% {
+        transform: translateX(-1000px) translateZ(0);
+    }
+}
+
+.slide-out-left {
+    animation-timing-function: ease-in-out;
+    animation-name: slide-out-left;
 }
 
 
@@ -75,9 +122,10 @@
         opacity: 1;
     }
 }
+
 .fade-enter-active {
-    animation: fade-in 1100ms ease-in-out;
-    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-name: fade-in;
 }
 
 // ---------- fade out: ----------
@@ -90,9 +138,10 @@
         opacity: 0;
     }
 }
-.fade-out-active {
-    animation: fade-out 1100ms ease-in-out;
-    animation-fill-mode: both;
+
+.fade-leave-active {
+    animation-timing-function: ease-in-out;
+    animation-name: fade-out;
 }
 
 

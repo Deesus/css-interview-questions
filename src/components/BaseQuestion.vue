@@ -8,16 +8,21 @@
         </div>
 
         <!-- ---------- the question's markup is injected into the slot: ---------- -->
-        <transition-group name="fade">
+        <transition-group
+                mode="out-in"
+                name="fade"
+                enter-active-class="fade-enter-active animate-500"
+                leave-active-class="fade-leave-active animate-500"
+        >
             <div class="problem-set" v-if="shouldShowQuestionMarkup" :key="'maximized'">
                 <slot></slot>
             </div>
-            <div v-if="!shouldShowQuestionMarkup" :key="'minimized'">
+            <div v-else :key="'minimized'">
                 <!-- ---------- image of desired result: ---------- -->
                 <figure class="question__figure">
                     <img src="https://placeimg.com/740/380/people" alt="">
                     <figcaption class="question__fig-caption">
-                        <span>Start Quiz</span>
+                        <span>Solve Problem</span>
                         <external-link-icon class="icon"/>
                     </figcaption>
                 </figure>
@@ -165,8 +170,8 @@
         }
 
         &__title {
+            position: relative;
             padding: 10px 16px;
-            height: @question-title-height;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -178,7 +183,9 @@
             border-bottom: 1px solid transparent;
 
             &&--fullscreen {
+                font-size: @font-size-default;
                 border-bottom-color: @font-color-muted;
+                padding: 16px;
             }
         }
 
@@ -227,11 +234,17 @@
 
         &__close-icon {
             position: absolute;
-            top: 0;
+            top: 50%;
+            transform: translateY(-50%);
             right: 25px;
-            font-size: 3rem;
+            font-size: 2.4rem;
             line-height: 1;
             cursor: pointer;
+            color: @font-color-muted;
+
+            &:hover {
+                color: @font-color-bold;
+            }
         }
     }
 </style>
