@@ -1,7 +1,7 @@
 <template>
     <question :description="description" :title="title">
-        <div class="panel-1">I should be above</div>
-        <div class="panel-2">I should be below</div>
+        <div class="panel-orange">I should be above</div>
+        <div class="panel-blue">I should be below</div>
     </question>
 </template>
 
@@ -18,7 +18,7 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: 'These two panels are overlapping. Make the yellow panel display above the blue one.'
+                description: 'These two panels are overlapping. Make the orange panel display above the blue one.'
             }
         },
 
@@ -30,27 +30,29 @@
 
 
 <style scoped lang="less">
-    .question-modal {
-        position: relative;
-        text-align: center;
-    }
+    .panel-orange {
+        @panel-bg-color: #ffed6b;
 
-    .panel-1,
-    .panel-2 {
+        text-align: center;
         position: absolute;
         width: 300px;
         height: 200px;
         padding: 7px 0;
+        margin: 40px 0 0 100px;
+        background: @panel-bg-color;
+        border: 1px solid darken(@panel-bg-color, 30%);
     }
 
-    .panel-1 {
-        margin-left: 100px;
-        background: #efff7f;
-    }
+    .panel-blue {
+        @panel-bg-color: #cbeaff;
 
-    .panel-2 {
-        margin-left: 150px;
-        margin-top: 50px;
-        background: #cbeaff;
+        text-align: center;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        padding: 7px 0;
+        margin: 90px 0 0 150px;
+        background: @panel-bg-color;
+        border: 1px solid darken(@panel-bg-color, 25%);
     }
 </style>

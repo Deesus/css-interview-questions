@@ -49,6 +49,18 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
+    @import "../../styles/base/_constants";
 
+    .modal {
+        background: #f2f2f2;
+        border: 1px solid @input-border-color;
+        border-radius: 4px;
+        padding: 6px 12px;
+        text-align: center;
+        height: 100px;
+        box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.25);
+        z-index: 5;
+        position: fixed;
+    }
 </style>

@@ -1,14 +1,16 @@
 <template>
     <question :description="description" :title="title">
-        <label><input type="text" placeholder="meow"></label>
-        <div class="lots-of-text">
-            Reiciendis earum sit aut quos dolor perspiciatis eos sunt.
-            Illo distinctio voluptatem sint in odio necessitatibus qui nesciunt. Ipsa autem et laborum suscipit iure.
-            Sunt quis tempora modi deleniti enim.
+        <div class="container">
+            <input class="input" type="text" placeholder="Username">
+            <p class="text">
+                Reiciendis earum sit aut quos dolor perspiciatis eos sunt.
+                Illo distinctio voluptatem sint in odio necessitatibus qui nesciunt. Ipsa autem et laborum suscipit iure.
+                Sunt quis tempora modi deleniti enim.
+            </p>
+            <button class="btn">okay</button>
+            <input type="checkbox" checked="checked">
+            <div class="circle"></div>
         </div>
-        <button>okay</button>
-        <input type="checkbox" checked="checked">
-        <div class="empty-box"></div>
     </question>
 </template>
 
@@ -37,6 +39,20 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
+    .circle {
+        background: #ffe732;
+        border: 1px solid #242424;
+        border-radius: 50%;
+        box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+        height: 40px;
+        width: 40px;
+        margin: 10px;
+    }
 
+    p.text {
+        padding: 10px;
+        max-width: 300px;
+        border: 1px solid #41313c;
+    }
 </style>

@@ -30,6 +30,16 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
+    .image {
+        display: block;
+    }
 
+    .image:first-child {
+        display: block;
+    }
+
+    .image:last-child {
+        display: block;
+    }
 </style>

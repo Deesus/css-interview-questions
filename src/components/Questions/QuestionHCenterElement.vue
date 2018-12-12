@@ -2,7 +2,7 @@
 
     <question :description="description" :title="title">
         <div class="container">
-            <button class="button" type="button">Horizontally Center Me</button>
+            <button class="btn" type="button">Horizontally Center Me</button>
         </div>
     </question>
 
@@ -36,8 +36,8 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
     .container {
-        border: 1px dashed red;
+        border-color: dodgerblue;
     }
 </style>

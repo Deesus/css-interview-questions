@@ -50,7 +50,7 @@ export default [
     },
 
     {
-        title: QuestionMarginBetweenListItems.title,
+        title: QuestionTwoImagesSpacedInARow.title,
         routeName: "two-images-in-row",
         component: QuestionTwoImagesSpacedInARow,
     }
