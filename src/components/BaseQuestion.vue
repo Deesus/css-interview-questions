@@ -2,10 +2,7 @@
     <div :class="questionCardCssClasses" @click.stop="showQuestionMarkup">
 
         <!-- ---------- title: ---------- -->
-        <div :class="questionTitleCssClasses">
-            {{ this.title }}
-            <i v-if="shouldShowQuestionMarkup" class="question__close-icon" @click.stop="hideQuestionMarkup">✕</i>
-        </div>
+        <div :class="questionTitleCssClasses">{{ this.title }}</div>
 
         <!-- ---------- the question's markup is injected into the slot: ---------- -->
         <transition-group
@@ -84,10 +81,6 @@
                         setTimeout(()=> this.isModalAnimationActive = false, 500);
                     }
                 }
-            },
-
-            hideQuestionMarkup(e) {
-                this.$store.commit('showQuestionMarkup', false);
             }
         },
 
@@ -140,7 +133,7 @@
         box-shadow: @box-shadow;
         transition: @transition-speed-slow width ease-in-out, @transition-speed-slow height ease-in-out;
         will-change: transform;
-        background: #fcfcfc;
+        background: #fdfdfd;
         overflow: hidden;
         cursor: pointer;
 
@@ -163,7 +156,7 @@
             height: 100%;
             width: 100%;
             margin: 0;
-            z-index: 120;
+            z-index: 20;
             cursor: default;
 
             &.expand-modal-active {
@@ -183,12 +176,6 @@
             line-height: 1;
             transition: 200ms;
             border-bottom: 1px solid transparent;
-
-            &&--fullscreen {
-                font-size: @font-size-default;
-                border-bottom-color: @font-color-muted;
-                padding: 16px;
-            }
         }
 
         &__figure {
@@ -232,21 +219,6 @@
 
         &__description {
             padding: 16px;
-        }
-
-        &__close-icon {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 25px;
-            font-size: 2.4rem;
-            line-height: 1;
-            cursor: pointer;
-            color: @font-color-muted;
-
-            &:hover {
-                color: @font-color-bold;
-            }
         }
     }
 </style>

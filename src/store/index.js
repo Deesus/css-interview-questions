@@ -8,18 +8,23 @@ export default new Vuex.Store({
     state: {
         questionList: questionList,
         selectedQuestionIndex: 0,
+        selectedQuestionTitle: '',
         shouldShowQuestionMarkup: false
     },
 
     // TODO: create constants for mutation names:
     mutations: {
         // when the link on the side panel is selected, we update the view on the main panel:
-        setSelectedQuestionIndex(state, payload) {
-            state.selectedQuestionIndex = payload;
+        setSelectedQuestionIndex(state, index) {
+            state.selectedQuestionIndex = index;
         },
 
-        showQuestionMarkup(state, payload) {
-            state.shouldShowQuestionMarkup = payload;
+        setSelectedQuestionTitle(state, questionTitle) {
+            state.selectedQuestionTitle = questionTitle;
+        },
+
+        showQuestionMarkup(state, shouldShow) {
+            state.shouldShowQuestionMarkup = shouldShow;
         }
     }
 });

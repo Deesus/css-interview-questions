@@ -4,7 +4,7 @@
         <div class="side-nav__header">CSS Interview Questions</div>
         <div v-for="(question, index) in questionList" :key="index">
             <router-link :to="{name: question.routeName }">
-                <div class="side-nav__item" @click="linkClicked(index)"> {{ question.title }}</div>
+                <div class="side-nav__item" @click="linkClicked(index, question.title)"> {{ question.title }}</div>
             </router-link>
         </div>
     </div>
@@ -22,8 +22,10 @@
         },
 
         methods: {
-            linkClicked(index) {
+            linkClicked(index, questionTitle) {
                 this.$store.commit('setSelectedQuestionIndex', index);
+                this.$store.commit('setSelectedQuestionTitle', questionTitle);
+                console.log(this.$store.state.selectedQuestionTitle);
             }
         },
 
@@ -48,14 +50,12 @@
         padding: 0 14px;
         height: 100%;
         overflow-y: auto;
-        border-right: 1px solid rgb(201, 201, 201);
         background: @bg-color;
 
         &__header {
             padding-top: 30px;
             padding-bottom: 20px;
             text-transform: uppercase;
-            color: darken(@font-color-blue, 40%);
         }
 
         &__item {
