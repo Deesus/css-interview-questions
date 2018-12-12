@@ -17,7 +17,7 @@ You'll need to:
 - Create a question as a `.vue` component (follow the template of the other questions)
 - Import it in `questionList.js`
 
-#### Dev Setup Quickstart:
+## Dev Quickstart:
 1. clone repo and cd to directory
 2. install packages: `$ npm install`
 3. run the dev server: $npm run dev (code changes will automatically be updated in the browser)
