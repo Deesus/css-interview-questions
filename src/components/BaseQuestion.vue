@@ -122,16 +122,15 @@
 
     @transition-speed-slow: 500ms;
     @transition-speed-fast: 200ms;
-
     @question-title-height: 32px;
-
     @question-min-height: 350px;
     @question-width: 400px;
     @question-onhover-width: 500px;
 
 
     .question {
-        grid-area: main;
+        grid-row: ~"2/3";
+        grid-column: ~"3/4";
         display: table;
         border-collapse: collapse;
         padding: 0;
@@ -141,7 +140,7 @@
         box-shadow: @box-shadow;
         transition: @transition-speed-slow width ease-in-out, @transition-speed-slow height ease-in-out;
         will-change: transform;
-        background: #fafafa;
+        background: #fcfcfc;
         overflow: hidden;
         cursor: pointer;
 

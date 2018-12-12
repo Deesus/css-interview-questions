@@ -7,7 +7,6 @@
                 <div class="side-nav__item" @click="linkClicked(index)"> {{ question.title }}</div>
             </router-link>
         </div>
-
     </div>
 
 </template>
@@ -44,10 +43,9 @@
     .side-nav {
         width: @side-nav-width;
         font-size: @font-size-small;
-        grid-area: side-nav;
+        grid-column: ~"2/3";
+        grid-row: ~"2/3";
         padding: 0 14px;
-        left: 0;
-        top: 0;
         height: 100%;
         overflow-y: auto;
         border-right: 1px solid rgb(201, 201, 201);

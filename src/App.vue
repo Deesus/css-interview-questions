@@ -1,5 +1,7 @@
 <template>
     <div id="app-layout">
+        <section-header></section-header>
+
         <transition name="slide"
                     enter-active-class="slide-in-left animate-700"
                     leave-active-class="slide-out-left animate-700"
@@ -21,6 +23,8 @@
 
 <script>
     import SectionSideNav from './components/SectionSideNav.vue';
+    import SectionHeader from './components/SectionHeader.vue';
+
 
     export default {
         name: 'App',
@@ -36,7 +40,8 @@
         },
 
         components: {
-            'section-side-nav': SectionSideNav
+            SectionSideNav,
+            SectionHeader
         }
     }
 </script>
@@ -45,17 +50,16 @@
 <style scoped lang="less">
     @import "./styles/base/_constants";
 
-
+    // TODO: might need to add @media queries
     #app-layout {
-        max-width: 1200px;
         margin: auto;
         display: grid;
-        grid-template-columns: @side-nav-width 1fr;
-        grid-template-rows: auto;
+        width: 100vw;
+        grid-template-columns: 1fr @side-nav-width 1000px 1fr;
+        grid-template-rows: auto 1fr;
         justify-items: center;
         align-items: center;
         grid-gap: 1px;
-        grid-template-areas: "side-nav main";
         min-height: 100vh;
         overflow-x: visible;     // n.b. set to hidden to prevent animation sliding from creating horizontal scrollbar
     }
