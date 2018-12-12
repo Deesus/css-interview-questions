@@ -74,12 +74,15 @@
 
         methods: {
             showQuestionMarkup() {
-                this.$store.commit('showQuestionMarkup', true);
+                // run function only if question is currently not shown; this prevents some UI jitter:
+                if (this.shouldShowQuestionMarkup === false) {
+                    this.$store.commit('showQuestionMarkup', true);
 
-                // when the modal is expanded, we apply an 'animation-active' class for the duration of the animation:
-                {
-                    this.isModalAnimationActive = true;
-                    setTimeout(()=> this.isModalAnimationActive = false, 500);
+                    // when the modal is expanded, we apply an 'animation-active' class for the duration of the animation:
+                    {
+                        this.isModalAnimationActive = true;
+                        setTimeout(()=> this.isModalAnimationActive = false, 500);
+                    }
                 }
             },
 
