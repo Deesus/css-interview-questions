@@ -123,7 +123,7 @@
 
     .question {
         grid-row: ~"2/3";
-        grid-column: ~"3/4";
+        grid-column: ~"2/3";
         display: table;
         border-collapse: collapse;
         padding: 0;
@@ -133,7 +133,7 @@
         box-shadow: @box-shadow;
         transition: @transition-speed-slow width ease-in-out, @transition-speed-slow height ease-in-out;
         will-change: transform;
-        background: #fdfdfd;
+        background: white;
         overflow: hidden;
         cursor: pointer;
 

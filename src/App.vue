@@ -55,7 +55,7 @@
         margin: auto;
         display: grid;
         width: 100vw;
-        grid-template-columns: 1fr @side-nav-width 6fr 1fr;
+        grid-template-columns: @section-side-nav-width 6fr;
         grid-template-rows: auto 1fr;
         justify-items: center;
         align-items: center;
