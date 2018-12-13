@@ -34,6 +34,7 @@
 
 <script>
     import { ExternalLinkIcon } from 'vue-feather-icons';
+    import { SHOW_QUESTION_MARKUP_MUTATION } from '../store/mutationTypes';
 
 
     export default {
@@ -73,7 +74,7 @@
             showQuestionMarkup() {
                 // run function only if question is currently not shown; this prevents some UI jitter:
                 if (this.shouldShowQuestionMarkup === false) {
-                    this.$store.commit('showQuestionMarkup', true);
+                    this.$store.commit(SHOW_QUESTION_MARKUP_MUTATION, true);
 
                     // when the modal is expanded, we apply an 'animation-active' class for the duration of the animation:
                     {

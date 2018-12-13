@@ -10,6 +10,9 @@
 
 
 <script>
+    import { SHOW_QUESTION_MARKUP_MUTATION } from '../store/mutationTypes';
+
+
     export default {
         name: 'SectionHeader',
 
@@ -21,7 +24,7 @@
 
         methods: {
             hideQuestionMarkup() {
-                this.$store.commit('showQuestionMarkup', false);
+                this.$store.commit(SHOW_QUESTION_MARKUP_MUTATION, false);
             }
         },
 

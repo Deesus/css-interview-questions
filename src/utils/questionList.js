@@ -43,7 +43,6 @@ export default [
     },
 
     {
-        // TODO: n.b. this problem can be solved using flexboxes, so we need to revise it
         title: QuestionCenterTheModal.title,
         routeName: "center-modal",
         component: QuestionCenterTheModal

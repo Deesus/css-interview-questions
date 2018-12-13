@@ -8,8 +8,10 @@
 
 
 <script>
+    // TODO: n.b. this problem can be solved using flexboxes, so we need to revise it
     import Question from '../BaseQuestion.vue';
     const QUESTION_TITLE = 'Center the Modal';
+
 
     export default {
         name: 'QuestionCenterTheModal',

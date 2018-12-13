@@ -2,14 +2,14 @@
 
     <div class="side-nav">
         <div class="side-nav__header">Questions</div>
-        <div v-for="(question, index) in questionList" :key="index">
+        <div v-for="(item, index) in navLinks" :key="index">
             <!-- TODO: is there a way to easily reference the index in a computed property in order to abstract away the logic from the markup? -->
-            <router-link :to="{name: question.routeName }">
+            <router-link :to="{name: item.routeName }">
                 <div :class="{ 'side-nav__item': true,
                                'side-nav__item--selected': index === selectedQuestionIndex }"
-                     @click="linkClicked(index, question.title)"
+                     @click="linkClicked(index, item.title)"
                 >
-                    {{ question.title }}
+                    {{ item.title }}
                 </div>
             </router-link>
         </div>
@@ -19,6 +19,10 @@
 
 
 <script>
+    import { SELECT_NAV_LINK_INDEX_MUTATION,
+             SELECT_NAV_LINK_TITLE_MUTATION } from '../store/mutationTypes';
+
+
     export default {
         name: 'LayoutSideNav',
 
@@ -28,14 +32,14 @@
 
         methods: {
             linkClicked(index, questionTitle) {
-                this.$store.commit('setSelectedQuestionIndex', index);
-                this.$store.commit('setSelectedQuestionTitle', questionTitle);
+                this.$store.commit(SELECT_NAV_LINK_INDEX_MUTATION, index);
+                this.$store.commit(SELECT_NAV_LINK_TITLE_MUTATION, questionTitle);
             }
         },
 
         computed: {
-            questionList() {
-                return this.$store.state.questionList;
+            navLinks() {
+                return this.$store.state.navLinks;
             },
 
             navItemCssClasses() {
