@@ -1,5 +1,5 @@
 <template>
-    <div class="c-header">
+    <div :class="headerCssClasses">
         <div v-if="!shouldShowQuestionMarkup" class="c-header__logo">CSS Interview Questions</div>
         <transition
                 name="fade"
@@ -42,6 +42,13 @@
 
             shouldShowQuestionMarkup() {
                 return this.$store.state.shouldShowQuestionMarkup;
+            },
+
+            headerCssClasses() {
+                return {
+                    'c-header':         true,
+                    'c-header--shadow': this.shouldShowQuestionMarkup === true
+                }
             }
         }
     }
@@ -66,6 +73,12 @@
         position: fixed;
         font-size: @font-size-large;
 
+        &&--shadow {
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.06),
+                        0 4px 5px 0 rgba(0, 0, 0, 0.06),
+                        0 2px 9px 0 rgba(0, 0, 0, 0.06);
+        }
+
         &__logo {
             &:extend(.flex-row);
             align-items: center;
@@ -80,6 +93,7 @@
             align-items: center;
             justify-content: center;
             flex-grow: 1;
+            /* TODO: since the &__logo element is not displayed on modal-expand, the centering causes text to shift */
         }
 
         &__close-icon {
@@ -90,10 +104,10 @@
             font-size: 2.4rem;
             line-height: 1;
             cursor: pointer;
-            color: @font-color-muted;
+            color: @font-color-blue;
 
             &:hover {
-                color: @font-color-bold;
+                color: lighten(@font-color-blue, 10%);
             }
         }
     }
