@@ -1,10 +1,16 @@
 <template>
     <div class="c-header">
         <div v-if="!shouldShowQuestionMarkup" class="c-header__logo">CSS Interview Questions</div>
-        <div v-else class="c-header__header-text">
-            {{ headerText }}
-            <i  class="c-header__close-icon" @click.stop="hideQuestionMarkup">✕</i>
-        </div>
+        <transition
+                name="fade"
+                enter-active-class="fade-enter-active animate-500"
+                leave-active-class="fade-leave-active animate-500"
+        >
+            <div v-if="shouldShowQuestionMarkup" class="c-header__header-text">
+                {{ headerText }}
+                <i  class="c-header__close-icon" @click.stop="hideQuestionMarkup">✕</i>
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -62,9 +68,9 @@
 
         &__logo {
             &:extend(.flex-row);
-            width: @section-side-nav-width;
             align-items: center;
             justify-content: flex-end;
+            width: @section-side-nav-width;
             border-right: @section-border;
             padding: @section-v-padding @section-h-padding;
         }
@@ -73,7 +79,7 @@
             &:extend(.flex-row);
             align-items: center;
             justify-content: center;
-            width: 100%;
+            flex-grow: 1;
         }
 
         &__close-icon {
