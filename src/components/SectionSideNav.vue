@@ -1,12 +1,12 @@
 <template>
 
     <div class="side-nav">
-        <div class="side-nav__header">Questions</div>
         <div v-for="(item, index) in navLinks" :key="index">
             <!-- TODO: is there a way to easily reference the index in a computed property in order to abstract away the logic from the markup? -->
             <router-link :to="{name: item.routeName }">
-                <div :class="{ 'side-nav__item': true,
-                               'side-nav__item--selected': index === selectedQuestionIndex }"
+                <div :class="{ 'side-nav__heading':        item.isNavHeading,
+                               'side-nav__item':           !item.isNavHeading,
+                               'side-nav__item--selected': (index === selectedQuestionIndex && !item.isNavHeading) }"
                      @click="linkClicked(index, item.title)"
                 >
                     {{ item.title }}
@@ -42,13 +42,6 @@
                 return this.$store.state.navLinks;
             },
 
-            navItemCssClasses() {
-                return {
-                    'side-nav__item': true,
-                    'side-nav__item--selected': this.index === this.$store.state.selectedQuestionIndex
-                }
-            },
-
             selectedQuestionIndex() {
                 return this.$store.state.selectedQuestionIndex;
             }
@@ -73,10 +66,12 @@
         border-right: @section-border;
         text-align: right;
 
-        &__header {
-            padding-top: 10px;
-            padding-bottom: 20px;
+        &__heading {
+            color: @font-color-default;
+            padding-top: 12px;
+            padding-bottom: 12px;
             text-transform: uppercase;
+            cursor: pointer;
         }
 
         &__item {
@@ -91,6 +86,6 @@
             &&--selected {
                 color: @font-color-blue;
             }
-         }
+        }
     }
 </style>
