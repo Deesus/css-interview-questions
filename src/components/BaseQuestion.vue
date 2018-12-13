@@ -172,7 +172,7 @@
             white-space: nowrap;
             text-align: center;
             color: @font-color-default;
-            font-size: 1.4rem;
+            font-size: @font-size-small;
             line-height: 1;
             transition: 200ms;
             border-bottom: 1px solid transparent;

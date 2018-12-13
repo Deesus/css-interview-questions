@@ -3,8 +3,14 @@
     <div class="side-nav">
         <div class="side-nav__header">Questions</div>
         <div v-for="(question, index) in questionList" :key="index">
+            <!-- TODO: is there a way to easily reference the index in a computed property in order to abstract away the logic from the markup? -->
             <router-link :to="{name: question.routeName }">
-                <div class="side-nav__item" @click="linkClicked(index, question.title)"> {{ question.title }}</div>
+                <div :class="{ 'side-nav__item': true,
+                               'side-nav__item--selected': index === selectedQuestionIndex }"
+                     @click="linkClicked(index, question.title)"
+                >
+                    {{ question.title }}
+                </div>
             </router-link>
         </div>
     </div>
@@ -30,6 +36,17 @@
         computed: {
             questionList() {
                 return this.$store.state.questionList;
+            },
+
+            navItemCssClasses() {
+                return {
+                    'side-nav__item': true,
+                    'side-nav__item--selected': this.index === this.$store.state.selectedQuestionIndex
+                }
+            },
+
+            selectedQuestionIndex() {
+                return this.$store.state.selectedQuestionIndex;
             }
         }
     }
@@ -61,8 +78,13 @@
         &__item {
             padding: 4px 0;
             cursor: pointer;
+            color: @font-color-muted;
 
             &:hover {
+                color: @font-color-default;
+            }
+
+            &&--selected {
                 color: @font-color-blue;
             }
          }
