@@ -1,5 +1,5 @@
 import questionList from '../questionList';
-import QuestionHome from '../components/Questions/QuestionHome.vue';
+import QuestionHome from '../components/Home.vue';
 
 
 let allRoutes = [];

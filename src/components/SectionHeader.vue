@@ -56,8 +56,8 @@
         border-bottom: @section-border;
         background: @bg-color;
         width: 100%;
-        height: 62px;
-        position: relative;
+        height: @section-header-width;
+        position: fixed;
         font-size: @font-size-large;
 
         &__logo {

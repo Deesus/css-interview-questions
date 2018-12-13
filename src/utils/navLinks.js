@@ -13,7 +13,7 @@
  *  isNavHeading {boolean}:     specifies that the item is a nav heading and not a link; if true, then special styles are applied
  */
 
-import QuestionHome from '../components/Questions/QuestionHome.vue';
+import QuestionHome from '../components/Home.vue';
 import questionList from '../questionList';
 
 
