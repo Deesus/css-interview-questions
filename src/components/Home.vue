@@ -13,7 +13,7 @@
             </figure>
             <p>
                 All problems <strong>should be solved by only CSS</strong> (i.e. no JS and no markup changes).
-                Note that there may be more than one solution to a given problem, but as in
+                Note that there may be more than one solution to a given problem, but as with real-world scenarios, some solutions are better than others.
             </p>
         </div>
     </div>
