@@ -13,7 +13,7 @@
             <figure class="question__figure">
                 <img src="https://placeimg.com/740/380/people" alt="">
                 <figcaption class="question__fig-caption">
-                    <span>Solve Problem</span>
+                    <span>Start Exercise</span>
                     <external-link-icon class="icon"/>
                 </figcaption>
             </figure>
