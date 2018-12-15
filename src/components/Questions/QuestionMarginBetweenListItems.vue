@@ -39,6 +39,12 @@
 
 <style scoped lang="less">
     @import "../../styles/base/_constants";
+    @import (reference) "../../styles/utils/_utils";
+
+
+    .container {
+        &:extend(.mixin-container);
+    }
 
     .list {
         @list-bg-color: rgba(82, 92, 101, 0.1);

@@ -2,7 +2,7 @@
     <question :description="description" :title="title">
         <div class="container">
             <div class="row">
-                <input placeholder="bye" type="text">
+                <input placeholder="howdy" type="text">
                 <input type="button" value="okay">
                 <input placeholder="hello" type="text">
                 <input placeholder="hi" type="text">
@@ -10,9 +10,9 @@
             <div class="row">
                 <input type="button" value="cancel">
                 <input placeholder="foo" type="text">
-                <input placeholder="hello" type="text">
                 <input placeholder="bar" type="text">
                 <input placeholder="baz" type="text">
+                <input placeholder="thud" type="text">
             </div>
             <div class="row">
                 <input placeholder="moo" type="text">
@@ -56,7 +56,17 @@
 
 
 <style scoped lang="less">
+    @import (reference) "../../styles/utils/_utils";
+
+    .container {
+        &:extend(.mixin-container);
+    }
+
     .row {
         margin-bottom: 25px;
+    }
+
+    input {
+        max-width: 185px;
     }
 </style>

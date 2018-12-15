@@ -40,8 +40,15 @@
 
 
 <style scoped lang="less">
-    .container > * {
-        margin: 6px;
+    @import (reference) "../../styles/utils/_utils";
+
+
+    .container {
+        &:extend(.mixin-container);
+
+        & > * {
+            margin: 6px;
+        }
     }
 
     .circle {
