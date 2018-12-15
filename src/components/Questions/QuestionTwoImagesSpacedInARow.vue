@@ -1,5 +1,5 @@
 <template>
-    <question :description="description" :title="title">
+    <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
         <img class="image" src="../../images/marble_palace.jpg" alt="Marble Palace"><img class="image" src="../../images/nevski_street.jpg" alt="Nevski Prospect">
     </question>
 </template>
@@ -19,7 +19,8 @@
                 title: QUESTION_TITLE,
                 description: "Fit both the images on a single row with a 40px margin between them. Ensure both images are of " +
                              "equal size, and that, together, they take up the entire width of the container (minus the 40px gap between them)." +
-                             "Hint: you'll want to give the images responsive widths."
+                             "Hint: you'll want to give the images responsive widths.",
+                thumbnailSrc: require('../../images/exercise_screenshots/2_images_in_row.png')
             }
         },
 

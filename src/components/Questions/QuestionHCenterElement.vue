@@ -1,6 +1,6 @@
 <template>
 
-    <question :description="description" :title="title">
+    <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
         <div class="container">
             <button class="btn" type="button">Horizontally Center Me</button>
         </div>
@@ -21,7 +21,8 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Horizontally center the button inside it's container"
+                description: "Horizontally center the button inside it's container",
+                thumbnailSrc: require('../../images/exercise_screenshots/h_center.png')
             };
         },
 

@@ -1,5 +1,5 @@
 <template>
-    <question :description="description" :title="title">
+    <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
         <div class="modal" :style="dynamicModalWidth">
             <h4>I really want to be centered!</h4>
         </div>
@@ -24,7 +24,8 @@
                 description: "Center the modal both vertically and horizontally (with respect to the container). Note that the " +
                     "width of the modal is randomly generated -- you'll have to figure out a way for the modal to be centered " +
                     "regardless of its width",
-                modalWidth: 500     // initial modal width,
+                modalWidth: 500,     // initial modal width,
+                thumbnailSrc: require('../../images/exercise_screenshots/center_modal.png')
             };
         },
 

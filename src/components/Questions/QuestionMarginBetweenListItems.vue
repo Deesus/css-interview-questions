@@ -1,5 +1,5 @@
 <template>
-    <question :description="description" :title="title">
+    <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
         <div class="container">
             <div class="list">
                 <div class="list-item">apple</div>
@@ -30,7 +30,8 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Add 15px margin between each list item, but not the first one."
+                description: "Add 15px margin between each list item, but not the first one.",
+                thumbnailSrc: require('../../images/exercise_screenshots/margin_between_li.png')
             };
         }
     }

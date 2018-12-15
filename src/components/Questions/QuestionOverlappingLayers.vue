@@ -1,5 +1,5 @@
 <template>
-    <question :description="description" :title="title">
+    <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
         <div class="panel-orange">I should be above</div>
         <div class="panel-blue">I should be below</div>
     </question>
@@ -18,7 +18,8 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: 'These two panels are overlapping. Make the orange panel display above the blue one.'
+                description: 'These two panels are overlapping. Make the orange panel display above the blue one.',
+                thumbnailSrc: require('../../images/exercise_screenshots/overlapping_divs.png')
             }
         },
 

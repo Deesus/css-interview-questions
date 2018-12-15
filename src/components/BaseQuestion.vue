@@ -11,7 +11,7 @@
         <div v-else :key="'minimized'">
             <!-- ---------- image of desired result: ---------- -->
             <figure class="question__figure">
-                <img src="https://placeimg.com/740/380/people" alt="">
+                <img :src="thumbnailSrc" alt="">
                 <figcaption class="question__fig-caption">
                     <span>Start Exercise</span>
                     <external-link-icon class="icon"/>
@@ -47,6 +47,10 @@
             description: {
                 type: String,
                 required: true
+            },
+
+            thumbnailSrc: {
+                type: String
             }
         },
 

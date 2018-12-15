@@ -1,5 +1,5 @@
 <template>
-    <question :description="description" :title="title">
+    <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
         <div class="container">
             <div class="row">
                 <input placeholder="howdy" type="text">
@@ -44,7 +44,8 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Select the buttons and set their background color to 'orange.' However, the input fields should remain white."
+                description: "Select the buttons and set their background color to 'orange.' However, the input fields should remain white.",
+                thumbnailSrc: require('../../images/exercise_screenshots/select_buttons.png')
             };
         },
 

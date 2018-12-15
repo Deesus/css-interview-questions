@@ -1,5 +1,5 @@
 <template>
-    <question :description="description" :title="title">
+    <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
         <div class="container">
             <input class="input" type="text" placeholder="Username">
             <p class="text">
@@ -28,7 +28,8 @@
             return {
                 title: QUESTION_TITLE,
                 description: "Currently, all the elements in the container are stacked on top of each other -- correct " +
-                             "this by displaying all of them in a single row and vertically centering them inside the container."
+                             "this by displaying all of them in a single row and vertically centering them inside the container.",
+                thumbnailSrc: require('../../images/exercise_screenshots/v_align.png')
             }
         },
 
