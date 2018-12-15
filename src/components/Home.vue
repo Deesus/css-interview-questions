@@ -50,8 +50,9 @@
         min-width: 300px;
         min-height: 216px;
         width: calc(~"75% - 120px");
-        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.37);
         border-radius: @border-radius-default;
+        border: 0;
 
         &__header {
             min-height: 48px;

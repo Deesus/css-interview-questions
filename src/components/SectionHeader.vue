@@ -1,6 +1,9 @@
 <template>
     <div :class="headerCssClasses">
-        <div v-if="!shouldShowQuestionMarkup" class="c-header__logo">CSS Interview Questions</div>
+        <div v-if="!shouldShowQuestionMarkup" class="c-header__logo">
+            <span class="text-gray-em">CSS&nbsp;</span>
+            <span class="text-muted">Interview Questions</span>
+        </div>
         <transition
                 name="fade"
                 enter-active-class="fade-enter-active animate-500"
@@ -71,6 +74,8 @@
         width: 100%;
         height: @section-header-width;
         position: fixed;
+        left: 0;
+        top: 0;
         font-size: @font-size-large;
 
         &&--shadow {
@@ -93,6 +98,9 @@
             align-items: center;
             justify-content: center;
             flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
             /* TODO: since the &__logo element is not displayed on modal-expand, the centering causes text to shift */
         }
 
