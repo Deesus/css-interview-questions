@@ -207,4 +207,8 @@
             padding: 16px;
         }
     }
+
+    .problem-set {
+        display: block;
+    }
 </style>

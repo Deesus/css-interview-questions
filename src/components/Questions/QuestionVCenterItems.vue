@@ -40,6 +40,10 @@
 
 
 <style scoped lang="less">
+    .container > * {
+        margin: 6px;
+    }
+
     .circle {
         background: #ffe732;
         border: 1px solid #242424;

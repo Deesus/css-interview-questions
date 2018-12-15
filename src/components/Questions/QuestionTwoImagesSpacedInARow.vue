@@ -32,14 +32,14 @@
 
 <style scoped lang="less">
     .image {
-        display: block;
+        display: inline-block;
     }
 
     .image:first-child {
-        display: block;
+        padding: 0;
     }
 
     .image:last-child {
-        display: block;
+        padding: 0;
     }
 </style>

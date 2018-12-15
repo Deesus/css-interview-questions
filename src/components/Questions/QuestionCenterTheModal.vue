@@ -65,4 +65,10 @@
         z-index: 5;
         position: fixed;
     }
+
+    /* n.b. the question container needs to be positioned to top since we want users to vertically center the modal */
+    /* TODO: use a different class instead of overriding the question block: */
+    .question.question--fullscreen {
+        top: 0;
+    }
 </style>

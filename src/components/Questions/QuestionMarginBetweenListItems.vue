@@ -6,6 +6,7 @@
                 <div class="list-item">orange</div>
                 <div class="list-item">banana</div>
                 <div class="list-item">cherry</div>
+                <div class="list-item">jackfruit</div>
             </div>
         </div>
     </question>
@@ -16,20 +17,21 @@
     import Question from '../BaseQuestion.vue';
     const QUESTION_TITLE = 'Margin Between List Items';
 
+
     export default {
         name: 'QuestionMarginBetweenListItems',
 
         title: QUESTION_TITLE,
 
+        components: {
+            Question
+        },
+
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Add 12px margin between each list item, but not the first one."
+                description: "Add 15px margin between each list item, but not the first one."
             };
-        },
-
-        components: {
-            Question
         }
     }
 </script>
@@ -45,7 +47,7 @@
         border-radius: @border-radius-default;
         background:  @list-bg-color;
         width: 250px;
-        height: 350px;
+        height: auto;
         margin: auto;
     }
 

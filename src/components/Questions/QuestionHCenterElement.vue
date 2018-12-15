@@ -37,7 +37,5 @@
 
 
 <style scoped lang="less">
-    .container {
-        border-color: dodgerblue;
-    }
+
 </style>
