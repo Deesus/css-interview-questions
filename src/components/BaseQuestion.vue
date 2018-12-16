@@ -117,10 +117,7 @@
 
 
     @question-transition-speed: 450ms;
-    @question-title-height: 32px;
-    @question-min-height: 350px;
-    @question-width: 600px;
-    @question-onhover-width: 500px;
+    @question-width: 650px;
 
 
     .question {
@@ -133,9 +130,8 @@
         // in order for the width/height transitions to work, we need to set number values (not `auto`)
         // so, we set them to zero and make the min height/width greater than that, effectively setting the values to `auto`:
         height: 0;
-        width: 0;
         min-height: 1px;
-        min-width: 1px;
+        width: @question-width;
         transition: @question-transition-speed width ease-in-out, @question-transition-speed height ease-in-out;
         will-change: transform;
         cursor: pointer;
