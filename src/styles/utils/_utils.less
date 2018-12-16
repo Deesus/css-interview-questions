@@ -15,29 +15,22 @@
     vertical-align: middle;
 
     &&--external-link-icon {
-        margin-top: -3px;
+        transform: translateY(0);
     }
 
     &&--sm {
-        width: 20px
+        width: @font-size-default;
     }
 
     &&--med {
-        width: 44px;
+        width: (@font-size-default * 3);
     }
 
     &&--lg {
-        width: 64px;
+        width: (@font-size-default * 5);
     }
 }
 
-// default nowrap, row-direction flex container:
-// TODO: should rename to `.mixin-flex-row` since it's being used as a mixin:
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
 
 // ==================================================
 // mixins:
@@ -49,4 +42,12 @@
     border: 1px solid #e0dee5;
     padding: 16px;
     margin: 40px;
+}
+
+// default nowrap, row-direction flex container:
+// TODO: should rename to `.mixin-flex-row` since it's being used as a mixin:
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }

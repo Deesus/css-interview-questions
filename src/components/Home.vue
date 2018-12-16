@@ -9,7 +9,7 @@
                 Remember, you can also add new CSS selectors in DevTools with the "+" button on the top right.
             </p>
             <figure>
-                <img class="img--dev-tools" src="../images/dev_tools.png" alt="">
+                <img src="../images/dev_tools.png" alt="">
             </figure>
             <p>
                 All problems <strong>should be solved by only CSS</strong> (i.e. no JS and no markup changes).
@@ -43,6 +43,7 @@
 <style scoped lang="less">
     @import "../styles/base/_constants";
 
+
     /* TODO: `.home` is similar to the `.card` component -- perhaps we can reuse some of the code. */
     .home {
         grid-row: ~"2/3";
@@ -64,12 +65,27 @@
         }
 
         &__body {
-            padding: @panel-section-padding;
-        }
-    }
+            padding: @panel-padding;
 
-    .img--dev-tools {
-        width: 250px;
-        height: auto;
+            /* TODO: n.b. these next 3 CSS selectors break BEM methodology rules: */
+            p {
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            figure {
+                float: right;
+
+                img {
+                    width: 250px;
+                    height: auto;
+                }
+            }
+        }
     }
 </style>
