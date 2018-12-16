@@ -36,21 +36,24 @@
     import Question from '../BaseQuestion.vue';
     const QUESTION_TITLE = 'Color Only the Buttons';
 
+
     export default {
         name: 'QuestionSelectOnlyButtons',
 
         title: QUESTION_TITLE,
 
+        components: {
+            Question
+        },
+
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Select the buttons and set their background color to 'orange.' However, the input fields should remain white.",
+                description:
+                    "It looks like we have a form with lots of \"input\" tags; however, we want to style only the tags that look and behave like buttons. " +
+                    "Select all the buttons and set their background color to 'orange' while ensuring the text fields remain unchanged.",
                 thumbnailSrc: require('../../images/exercise_screenshots/select_buttons.png')
             };
-        },
-
-        components: {
-            Question
         }
     }
 </script>

@@ -30,7 +30,10 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Add 15px margin between each list item, but not the first one.",
+                description:
+                    "This set of list items is styled, but there's no spacing between the items. " +
+                    "Add 15px margin BETWEEN each list item -- there should be no space between the first item and the top " +
+                    "of the list and no space between the last item and the bottom of the list.",
                 thumbnailSrc: require('../../images/exercise_screenshots/margin_between_li.png')
             };
         }

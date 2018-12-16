@@ -27,7 +27,8 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Currently, all the elements in the container are stacked on top of each other -- correct " +
+                description: "Before the advent of CSS3 specs, vertically centering elements inside a container used to be challenging. " +
+                             "In this problem, the elements in the container are stacked on top of each other -- correct " +
                              "this by displaying all of them in a single row and vertically centering them inside the container.",
                 thumbnailSrc: require('../../images/exercise_screenshots/v_align.png')
             }

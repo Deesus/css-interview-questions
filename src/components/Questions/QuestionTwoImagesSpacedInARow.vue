@@ -17,7 +17,7 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Fit both the images on a single row with a 40px margin between them. Ensure both images are of " +
+                description: "Here's a challenge for you: fit both the images on a single row with a 40px margin between them. Ensure both images are of " +
                              "equal size, and that, together, they take up the entire width of the container (minus the 40px gap between them)." +
                              "Hint: you'll want to give the images responsive widths.",
                 thumbnailSrc: require('../../images/exercise_screenshots/2_images_in_row.png')

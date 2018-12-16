@@ -1,6 +1,6 @@
 <template>
     <question :description="description" :title="title" :thumbnailSrc="thumbnailSrc">
-        <div class="modal" :style="dynamicModalWidth">
+        <div class="modal" :style="dynamicModalDimensions">
             <h4>I really want to be centered!</h4>
         </div>
     </question>
@@ -21,10 +21,12 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Center the modal both vertically and horizontally (with respect to the container). Note that the " +
-                    "width of the modal is randomly generated -- you'll have to figure out a way for the modal to be centered " +
-                    "regardless of its width",
-                modalWidth: 500,     // initial modal width,
+                description:
+                    "For this question, we would like to center the modal both vertically and horizontally, with respect to the viewport/screen " +
+                    "(therefore, you can ignore the page header when calculating the vertical position). Note that the " +
+                    "width and height of the modal is randomly generated -- you'll have to take into account the modal's dynamic dimensions to center it properly.",
+                modalWidth: 500,    // initial modal width,
+                modalHeight: 100,   // initial modal height
                 thumbnailSrc: require('../../images/exercise_screenshots/center_modal.png')
             };
         },
@@ -32,17 +34,18 @@
         methods: {},
 
         computed: {
-            dynamicModalWidth() {
-                return `width: ${this.modalWidth}px`;
+            dynamicModalDimensions() {
+                return `width: ${this.modalWidth}px; height: ${this.modalHeight}px;`;
             }
         },
 
         mounted() {
 
-            // dynamically generate modal width between 200px-800px every 2.6s:
+            // every 2.5s dynamically generate modal width between 200px-800px and height between 100px-400px:
             setInterval(()=> {
                 this.modalWidth = Math.floor((Math.random() * 600) + 200);
-            }, 2600);
+                this.modalHeight = Math.floor((Math.random() * 300) + 100);
+            }, 2500);
         },
 
         components: {

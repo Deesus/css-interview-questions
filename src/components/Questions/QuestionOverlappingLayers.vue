@@ -18,7 +18,9 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: 'These two panels are overlapping. Make the orange panel display above the blue one.',
+                description:
+                    "These two panels overlap -- they are positioned correctly, but the wrong one is on top. " +
+                    "Edit the styles to make the orange panel display above the blue one.",
                 thumbnailSrc: require('../../images/exercise_screenshots/overlapping_divs.png')
             }
         },

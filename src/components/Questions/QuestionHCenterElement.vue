@@ -21,7 +21,8 @@
         data() {
             return {
                 title: QUESTION_TITLE,
-                description: "Horizontally center the button inside it's container",
+                description: "Centering elements is one of the most common tasks front-end developers face. " +
+                             "For this challenge, let's horizontally center the button with respect to its container.",
                 thumbnailSrc: require('../../images/exercise_screenshots/h_center.png')
             };
         },
