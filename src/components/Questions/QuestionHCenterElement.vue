@@ -38,5 +38,9 @@
 
 
 <style scoped lang="less">
+    @import (reference) "../../styles/utils/_utils";
 
+    .container {
+        &:extend(.mixin-container);
+    }
 </style>

@@ -5,12 +5,34 @@
     color: @font-color-muted;
 }
 
-.text-gray-em {
-    color: @font-color-gray-em;
+.text-gray-emphasis {
+    color: @font-color-gray-emphasis;
     font-weight: bold;
 }
 
+.icon {
+    height: auto;
+    vertical-align: middle;
+
+    &&--external-link-icon {
+        margin-top: -3px;
+    }
+
+    &&--sm {
+        width: 20px
+    }
+
+    &&--med {
+        width: 44px;
+    }
+
+    &&--lg {
+        width: 64px;
+    }
+}
+
 // default nowrap, row-direction flex container:
+// TODO: should rename to `.mixin-flex-row` since it's being used as a mixin:
 .flex-row {
     display: flex;
     flex-direction: row;

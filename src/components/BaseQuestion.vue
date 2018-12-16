@@ -1,26 +1,36 @@
 <template>
     <div :class="questionCardCssClasses" @click.stop="showQuestionMarkup">
 
-        <!-- ---------- title: ---------- -->
-        <div class="question__title" v-if="!shouldShowQuestionMarkup">{{ this.title }}</div>
 
         <!-- ---------- the question's markup is injected into the slot: ---------- -->
         <div class="problem-set" v-if="shouldShowQuestionMarkup" :key="'maximized'">
             <slot></slot>
         </div>
-        <div v-else :key="'minimized'">
-            <!-- ---------- image of desired result: ---------- -->
-            <figure class="question__figure">
-                <img :src="thumbnailSrc" alt="">
-                <figcaption class="question__fig-caption">
-                    <span>Start Exercise</span>
-                    <external-link-icon class="icon"/>
-                </figcaption>
-            </figure>
+
+        <!-- ---------- card: ---------- -->
+        <div v-else class="card" :key="'minimized'">
+
+            <!-- ---------- header: ---------- -->
+            <div class="card-header card__header">
+                <div class="card-header__title">{{ this.title }}</div>
+                <div class="card-header__out-link">
+                    <span>Solve Problem</span>
+                    <external-link-icon class="icon icon--external-link-icon icon--sm"></external-link-icon>
+                </div>
+            </div>
 
             <!-- ---------- question description: ---------- -->
-            <div class="question__description">{{ this.description }}</div>
+            <div class="card__description">{{ this.description }}</div>
+
+            <!-- ---------- image of desired result: ---------- -->
+            <figure class="card__figure">
+                <img :src="thumbnailSrc" alt="">
+                <figcaption class="card__fig-caption">Expected Output</figcaption>
+            </figure>
+
         </div>
+
+
     </div>
 </template>
 
@@ -103,11 +113,13 @@
 <style scoped lang="less">
     @import "../styles/base/_constants";
     @import (reference) "../styles/utils/_animations";
+    @import "../styles/utils/_utils";
+
 
     @question-transition-speed: 450ms;
     @question-title-height: 32px;
     @question-min-height: 350px;
-    @question-width: 400px;
+    @question-width: 600px;
     @question-onhover-width: 500px;
 
 
@@ -115,34 +127,23 @@
         grid-row: ~"2/3";
         grid-column: ~"2/3";
         display: table;
+        border-radius: @border-radius-default;
         border-collapse: collapse;
-        padding: 0;
-        width: @question-width;
+
+        // in order for the width/height transitions to work, we need to set number values (not `auto`)
+        // so, we set them to zero and make the min height/width greater than that, effectively setting the values to `auto`:
         height: 0;
-        min-height: @question-min-height;
-        box-shadow: @box-shadow;
+        width: 0;
+        min-height: 1px;
+        min-width: 1px;
         transition: @question-transition-speed width ease-in-out, @question-transition-speed height ease-in-out;
         will-change: transform;
-        background: white;
-        overflow: hidden;
         cursor: pointer;
 
-
-        &:hover {
-            width: @question-onhover-width;
-            box-shadow: @box-shadow-hover;
-
-            .question__fig-caption {
-                opacity: 0.25;
-            }
-        }
-
         &&--fullscreen {
-            min-height: @question-min-height;
-            min-width: @question-width;
             position: fixed;
             left: 0;
-            top: @section-header-width;
+            top: @section-header-width; // this prevents the markup from being covered up by the fixed header
             height: 100%;
             width: 100%;
             margin: 0;
@@ -153,62 +154,77 @@
                 .expand-modal-active();
             }
         }
+    }
 
-        &__title {
-            position: relative;
-            padding: 10px 16px;
+    .card {
+        width: 650px;
+        border-radius: @border-radius-default;
+        border: @panel-border;
+        padding: @panel-padding;
+
+        &__header {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            text-align: center;
-            color: @font-color-default;
             font-size: @font-size-small;
             line-height: 1;
             transition: 200ms;
-            border-bottom: 1px solid transparent;
+            margin: -@panel-padding -@panel-padding 0 -@panel-padding;
+            border-bottom: @panel-border;
+        }
+
+        &__description {
+            margin: @panel-margin 0 0 0;
+            padding-right: 33%;
         }
 
         &__figure {
-            margin: 0;
+            margin: @panel-margin 0 0 0;
             padding: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+            text-align: right;
             position: relative;
 
             img {
                 height: auto;
-                width: auto;
+                width: 350px;
                 max-width: 100%;
-                max-height: 300px;
+                border: @panel-border;
+            }
+
+            figcaption {
+                color: @font-color-gray-light;
+                text-transform: capitalize;
             }
         }
+    } // /.card
 
-        &__fig-caption {
-            background: black;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transition: 400ms;
-            font-size: 3rem;
-            color: white;
-            display: flex;
+    .card-header {
+        &:extend(.flex-row);
+        height: auto;
+
+        &__title {
+            border-bottom: 3px solid @font-color-blue;
+            padding: @panel-section-padding;
+        }
+
+        &__out-link {
+            &:extend(.flex-row);
+            flex-grow: 1;
+            justify-content: flex-end;
             align-items: center;
-            justify-content: center;
+            padding: @panel-section-padding;
+            opacity: 0;
+            transition: 250ms opacity ease-in-out;
+
+            /* TODO: n.b. these next 2 CSS selectors break BEM methodology rules: */
+            // if `.card` component is hovered over:
+            .card:hover & {
+                opacity: 0.35;
+            }
 
             .icon {
-                margin-left: 1rem;
-                height: 3.2rem;
-                width: auto;
+                margin-left: 8px;
             }
-        }
-
-        &__description {
-            padding: 16px;
         }
     }
 

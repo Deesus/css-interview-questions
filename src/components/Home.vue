@@ -43,7 +43,7 @@
 <style scoped lang="less">
     @import "../styles/base/_constants";
 
-
+    /* TODO: `.home` is similar to the `.card` component -- perhaps we can reuse some of the code. */
     .home {
         grid-row: ~"2/3";
         grid-column: ~"2/3";
@@ -58,13 +58,13 @@
             min-height: 48px;
             line-height: 1;
             border-bottom: @panel-border;
-            padding: 16px 20px;
+            padding: @panel-section-padding;
             font-size: @font-size-large;
             text-align: center;
         }
 
         &__body {
-            padding: 16px 28px;
+            padding: @panel-section-padding;
         }
     }
 
