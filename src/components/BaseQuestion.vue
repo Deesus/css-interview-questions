@@ -175,7 +175,7 @@
 
         &__description {
             margin: @panel-margin 0 0 0;
-            padding-right: 33%;
+            padding-right: 30%;
         }
 
         &__figure {

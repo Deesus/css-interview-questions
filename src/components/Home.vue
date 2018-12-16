@@ -3,10 +3,11 @@
         <div class="home__header">About The <b>CSS Exercises</b></div>
         <div class="home__body">
             <p>
-                These interactive problems are designed to test your CSS knowledge and ability to solve front-end styling problems.
-                After selecting a problem from the list of exercises, <strong>open up your browser's DevTools</strong>.
-                From there you can add/edit styles directly in DevTools.
-                Remember, you can also add new CSS selectors in DevTools with the "+" button on the top right.
+                These interactive questions are designed to test your CSS knowledge and ability to solve front-end styling problems.
+                Each question will give you a description of the criteria required to pass the problem.
+                <strong>Click on the question card</strong> to begin the problem. Open up your browser's DevTools;
+                from there you can <strong>add/edit styles directly in DevTools</strong>.
+                Remember, you can also add new CSS selectors in DevTools with the <strong>"+"</strong> button on the top right.
             </p>
             <figure>
                 <img src="../images/dev_tools.png" alt="">

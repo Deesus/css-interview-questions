@@ -8,9 +8,11 @@
 // ==================================================
 
 .btn {
+    @btn-color: #2c63ff;
+
     display: block;
     padding: 6px 10px;
-    background: #2c63ff;
+    background: @btn-color;
     color: white;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: @border-radius-default;
@@ -18,8 +20,7 @@
     cursor: pointer;
 
     &:hover {
-        background: darken(#2c63ff, 10%);
-
+        background: darken(@btn-color, 10%);
     }
 }
 

@@ -3,8 +3,6 @@
 import 'babel-runtime/regenerator';
 import 'webpack-hot-middleware/client?reload=true';         // creates websocket connection (and reloading on change)
 import './styles/app.less';
-// TODO: should we import `user_solution?`
-// import '../user_solution.css';
 import '../index.html';
 
 import Vue from 'vue';
