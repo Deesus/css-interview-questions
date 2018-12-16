@@ -101,7 +101,6 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            /* TODO: since the &__logo element is not displayed on modal-expand, the centering causes text to shift */
         }
 
         &__close-icon {

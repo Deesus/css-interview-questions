@@ -114,8 +114,6 @@ module.exports = {
 
             // ---------- Images: ----------
             {
-                // TODO: test svg for this loader:
-
                 // tries to match any of the following file types (via regex):
                 test: /\.(jpe?g|gif|png|svg)$/,
                 use: [
