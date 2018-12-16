@@ -5,7 +5,9 @@ import QuestionVCenterItems             from './components/Questions/QuestionVCe
 import QuestionHCenterElement           from './components/Questions/QuestionHCenterElement.vue';
 import QuestionOverlappingLayers        from './components/Questions/QuestionOverlappingLayers.vue';
 import QuestionMarginBetweenListItems   from './components/Questions/QuestionMarginBetweenListItems.vue';
-
+import QuestionClickPassThrough         from './components/Questions/QuestionClickPassThrough.vue';
+import QuestionBlackAndWhite            from './components/Questions/QuestionBlackAndWhite.vue'
+import QuestionTruncateText             from './components/Questions/QuestionTruncateText.vue';
 
 export default [
     {
@@ -30,9 +32,27 @@ export default [
     },
 
     {
+        title: QuestionClickPassThrough.title,
+        routeName: "click-pass-through",
+        component: QuestionClickPassThrough
+    },
+
+    {
         title: QuestionVCenterItems.title,
         routeName: "v-align-elements",
         component: QuestionVCenterItems
+    },
+
+    {
+        title: QuestionTruncateText.title,
+        routeName: "truncate-text",
+        component: QuestionTruncateText
+    },
+
+    {
+        title: QuestionBlackAndWhite.title,
+        routeName: "black-and-white",
+        component: QuestionBlackAndWhite
     },
 
     {

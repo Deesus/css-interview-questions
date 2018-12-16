@@ -50,7 +50,7 @@
 <style scoped lang="less">
     @import "./styles/base/_constants";
 
-    // TODO: might need to add @media queries
+    /* TODO: might need to add @media queries */
     #app-layout {
         margin: auto;
         display: grid;
