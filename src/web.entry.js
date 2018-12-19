@@ -18,7 +18,7 @@ const router = new VueRouter({
 // vue instance:
 // ==================================================
 
-// TODO: we get `[Vue warn]: Cannot find element: #app' unless we use `window.onload`; need to fix something in Webpack
+// TODO: we get `[Vue warn]: Cannot find element: #app' unless we use `window.onload`; we could also use `defer` in the bundle's <script>:
 window.onload = function() {
 
     new Vue({
