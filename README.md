@@ -1,5 +1,6 @@
 # Interactive CSS Interview Questions
-List of interactive CSS questions for job interviews (and practice).
+###### Demo: http://cssquestions.deepankara.com
+An interactive CSS questions app -- a list of coding challenges for job interviews (and for practice).
 
 Questions have been developed in such a way that they should be **solved by only CSS** (no JS and no markup changes).
 Open up your browser, select a question, and use DevTools to add/edit styles in order to solve a given problem.
@@ -10,14 +11,16 @@ Note that the questions are ordered by relative difficultly: from easiest (first
 ## Additional Questions:
 You can add (or remove) questions from the app.
 You'll need to:
-- Create a question as a `.vue` component (follow the template of the other questions)
+- Create a question as a `.vue` component (use the template found in the `/templates` folder)
 - Import it in `questionList.js`
+- Inside `questionList.js`, give your question object a unique route
 
 
 ## Dev Quickstart:
 1. clone repo and cd to directory
 2. install packages: `$ npm install`
 3. run the dev server: $npm run dev (code changes will automatically be updated in the browser)
+4. consult `package.json` for additional npm scripts (e.g. for building and running in production)
 
 
 ## Dev Notes/FAQ:
