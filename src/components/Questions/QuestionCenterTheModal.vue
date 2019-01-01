@@ -73,6 +73,6 @@
     /* TODO: use a different class instead of overriding the question block: */
     .question.question--fullscreen {
         top: 0;
-        margin-top: @section-header-width;
+        margin-top: @section-header-height;
     }
 </style>

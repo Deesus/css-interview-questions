@@ -139,7 +139,7 @@
         &&--fullscreen {
             position: fixed;
             left: 0;
-            top: @section-header-width; // this prevents the markup from being covered up by the fixed header
+            top: @section-header-height; // this prevents the markup from being covered up by the fixed header
             height: 100%;
             width: 100%;
             margin: 0;

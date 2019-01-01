@@ -72,7 +72,7 @@
         border-bottom: @section-border;
         background: @bg-color;
         width: 100%;
-        height: @section-header-width;
+        height: @section-header-height;
         position: fixed;
         left: 0;
         top: 0;
