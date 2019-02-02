@@ -1,5 +1,6 @@
 # Interactive CSS Interview Questions
 ###### Demo: http://cssquestions.deepankara.com
+###### Docker image: deesus/css-interview-questions:1
 An interactive CSS questions app -- a list of coding challenges for job interviews (and for practice).
 
 Questions have been developed in such a way that they should be **solved by only CSS** (no JS and no markup changes).
@@ -16,6 +17,15 @@ You'll need to:
 - Inside `questionList.js`, give your question object a unique route
 
 
+## Running the app via Docker:
+1. Unsure you have installed Docker.
+2. In Bash, pull and run the image from the remote public repo:
+```bash
+$ docker run -it -p 8080:80 --rm deesus/css-interview-questions:1
+```
+3. In your browser, you can access the app on http://localhost:8080
+
+
 ## Dev Quickstart:
 1. clone repo and cd to directory
 2. install packages: `$ npm install`
@@ -30,10 +40,12 @@ Scoped style tags (e.g. `<style scoped>`) is employed to prevent the style chang
 - Vue
 - Vue Router
 - Vuex
+- Docker
+- Nginx
 - CSS Grids and Flexbox
 - Less
 - Webpack 
 
 
 ## License:
-Copyright © 2018 Dee Reddy. BSD-2 License.
+Copyright © 2018-2019 Dee Reddy. BSD-2 License.
